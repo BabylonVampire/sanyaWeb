@@ -1,0 +1,70 @@
+@import '../../lib/theme/theme.scss';
+
+.aboutPage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.innerBox {
+	width: 100%;
+	max-width: 1200px;
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.textBox {
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 40px;
+	background-color: $colorLightBlueBack;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.7490196078) inset;
+}
+
+.heading {
+	font-family: $fontFamilyRegular;
+	font-size: $fontSizeXL;
+}
+
+.subHeading {
+	font-size: 25px;
+	color: $textColorSecondary;
+	font-family: $fontFamilyRegular;
+	font-weight: bold;
+}
+
+.divider {
+	width: 100px;
+	height: 2px;
+	background: #1f1f1f;
+}
+
+.background {
+	position: absolute;
+	width: 700px;
+	right: -200px;
+	top: 100px;
+	opacity: 0.3;
+	user-select: none;
+	pointer-events: none;
+}
+
+.description {
+	color: $textColorSecondary;
+}
+
+@media screen and (max-width: 1200px) {
+	.aboutSection {
+		width: 100%;
+	}
+
+	.image {
+		display: none;
+	}
+}

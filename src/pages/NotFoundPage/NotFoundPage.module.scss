@@ -1,0 +1,11 @@
+@import '../../lib/theme/theme.scss';
+
+.textBox {
+	text-align: center;
+	font-size: 50px;
+	width: fit-content;
+	margin: 80px auto 0 auto;
+	padding: 20px;
+	border-radius: 20px;
+	background-color: $colorLightBlueBack;
+}

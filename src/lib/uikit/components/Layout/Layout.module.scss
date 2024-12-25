@@ -1,0 +1,50 @@
+@import '../../../theme/theme.scss';
+
+.layout {
+	position: relative;
+	min-width: 306px;
+	overflow: hidden;
+	background-color: $colorMain;
+}
+
+.loadingLogo {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: loadingScreen 1.5s ease-in-out 2.5s 1 forwards;
+	overflow: hidden;
+}
+
+.logo {
+	width: 100px;
+	height: 100px;
+	background-image: url(../../../../assets/images/logo.svg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 0;
+	animation: appearance 1.5s ease-in-out 0.5s 1 forwards;
+}
+
+@-webkit-keyframes appearance {
+	0% {
+		opacity: 0;
+		rotate: 180deg;
+	}
+
+	100% {
+		opacity: 1;
+		rotate: 360deg;
+	}
+}
+
+@-webkit-keyframes loadingScreen {
+	0% {
+		height: 100vh;
+	}
+
+	100% {
+		height: 0;
+	}
+}

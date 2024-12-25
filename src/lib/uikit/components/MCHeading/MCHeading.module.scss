@@ -1,0 +1,11 @@
+@import '../../../theme/theme.scss';
+
+.MCHeading {
+	width: 100%;
+	color: $textColorMain;
+	font-size: 46px;
+	text-align: center;
+	font-family: $fontFamilyRegular;
+
+	margin: 15px 0;
+}

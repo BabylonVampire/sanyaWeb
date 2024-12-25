@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import './lib/theme/theme.scss';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	-webkit-tap-highlight-color: transparent;
+}
+
+p {
+	font-family: $fontFamilyRegular;
+	color: $textColorMain;
+	font-size: 25px;
+	line-height: 1.3em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: $fontFamilyHeading;
+	color: $textColorMain;
+}
+
+@font-face {
+	font-family: regular;
+	src: url('../../assets/fonts/StudioSans.otf');
+}
+
+@font-face {
+	font-family: heading;
+	src: url('./assets/fonts/StudioSansBold.otf');
+}
+
+::selection {
+	background: #3a8199;
+	color: black;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	background: #3a8199;
+	color: black;
+	text-shadow: none;
+}
+
+* ::-webkit-scrollbar {
+	width: 6px; /* ширина scrollbar */
+}
+* ::-webkit-scrollbar-track {
+	background-color: #1a1a1a; /* цвет плашки */
+}
+* ::-webkit-scrollbar-thumb {
+	background: $textColorSecondary; /* цвет дорожки */
+	border-radius: 10px; /* закругления плашки */
+}

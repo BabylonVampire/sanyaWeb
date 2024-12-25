@@ -1,0 +1,28 @@
+@import '../../../../theme/theme.scss';
+
+.pageblock {
+	width: 100%;
+	background-color: inherit;
+	color: inherit;
+	font-size: 18px;
+	font-family: $fontFamilyRegular;
+	box-sizing: border-box;
+	display: flex;
+}
+.page {
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	text-decoration: none;
+	font-size: 17px;
+	color: $textColorSecondary;
+	transition: 0.3s;
+
+	&:not(:last-child) {
+		border-right: solid 1px #373737;
+	}
+}
+
+.page:hover {
+	color: $textColorMain;
+}

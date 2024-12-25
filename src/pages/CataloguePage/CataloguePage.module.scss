@@ -1,0 +1,249 @@
+@import '../../lib/theme/theme.scss';
+
+.cataloguePage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.checkBoxContainer {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+
+.innerBox {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.productsBox {
+	width: 100%;
+	padding: 30px 0;
+	max-width: 1000px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	flex-direction: row;
+	gap: 20px;
+	background-color: #161616;
+	box-shadow: 0px 0px 5px 0px #000000bf inset;
+}
+
+.heading {
+	font-family: $fontFamilyRegular;
+	color: $textColorMain;
+	font-size: 50px;
+}
+
+.divider {
+	width: 100%;
+	height: 1px;
+	background-color: #555555;
+	margin: 10px 0;
+}
+
+.filter {
+	&Background {
+		margin-top: 0 !important;
+		margin-bottom: 50px !important;
+	}
+
+	&Box {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 20px;
+	}
+
+	&Heading {
+		border-bottom: solid 1px #555555;
+		padding-bottom: 10px;
+	}
+
+	&Text {
+		padding: 30px;
+		background: rgba(28, 28, 28, 0.5);
+		box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 5px 0px inset;
+		width: 450px;
+	}
+
+	&Form {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		width: 750px;
+	}
+
+	&ByManufacturer,
+	&ByType,
+	&ByCoin {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+}
+
+.verticalDivider {
+	width: 0.5px;
+	height: 37px;
+	background-color: $textColorSecondary;
+}
+
+.selectWrapper {
+	width: 100%;
+	max-width: 1200px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.sortSelector {
+	margin-bottom: 30px;
+}
+
+:global(.ant-select-selector) {
+	border-radius: 0px !important;
+	padding: 10px !important;
+	font-weight: 400;
+	border: none !important;
+	background: #161616 !important;
+	color: #fff !important;
+	box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 5px 0px inset !important;
+}
+
+:global(.ant-select-dropdown) {
+	border-radius: 0 !important;
+	background-color: #161616 !important;
+	color: #fff !important;
+}
+
+:global(.ant-select-item-option-content) {
+	color: #fff !important;
+}
+
+:global(.ant-select-item-option-selected) {
+	background-color: #0a0a0a !important;
+	border-radius: 0 !important;
+}
+
+:global(.ant-select-selection-search-input),
+:global(.ant-select-selection-item),
+:global(.ant-select-selection-placeholder) {
+	font-family: $fontFamilyRegular !important;
+	font-size: 18px !important;
+	color: #fff !important;
+}
+
+:global(.ant-select-arrow) {
+	display: none !important;
+}
+
+:global(.ant-select-single) {
+	height: auto;
+}
+
+.checkBox {
+	border-radius: 5px;
+	padding: 0px 20px;
+	border: none;
+	background: rgba(28, 28, 28, 0.5);
+	box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 5px 0px inset;
+	font-family: var(--font-family-regular);
+	font-size: 15px;
+	color: $textColorSecondary;
+	font-weight: 600;
+	cursor: pointer;
+	transition: 0.3s;
+	display: flex;
+	flex-direction: row;
+	gap: 15px;
+	align-items: center;
+
+	&:hover {
+		background-color: hsl(0deg 0% 79.9% / 31%);
+	}
+
+	&:active {
+		background-color: hsl(0deg 0% 55.71% / 31%);
+	}
+
+	&Chosen {
+		background-color: #6ac2e3 !important;
+	}
+}
+
+.coinHeading {
+	font-size: 35px;
+}
+
+.articleContainer {
+	max-width: 1200px;
+	width: 100%;
+	padding: 30px 10px 0 10px;
+}
+
+@media (max-width: 1200px) {
+	.selectWrapper {
+		justify-content: center;
+		flex-direction: column;
+		gap: 10px;
+		align-items: center;
+	}
+
+	.coinHeading {
+		text-align: center;
+	}
+
+	.filter {
+		&Box {
+			padding: 0 10px;
+			flex-direction: column;
+		}
+
+		&Form {
+			align-items: center;
+		}
+
+		&ByManufacturer,
+		&ByType,
+		&ByCoin {
+			align-items: center;
+		}
+	}
+
+	.checkBoxContainer {
+		justify-content: center;
+	}
+}
+
+@media (max-width: 750px) {
+	.filterForm {
+		width: 100%;
+		padding: 0 20px;
+	}
+
+	.filterText {
+		width: 100%;
+		padding: 20px;
+		margin: 0 20px;
+	}
+}
+
+@media (max-width: 400px) {
+	.checkBoxContainer {
+		justify-content: flex-start;
+	}
+
+	.heading {
+		font-size: 40px;
+	}
+}

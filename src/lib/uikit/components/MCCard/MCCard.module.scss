@@ -1,0 +1,129 @@
+@import '../../../theme/theme.scss';
+
+.card {
+	width: 300px;
+	height: 340px;
+	overflow: hidden;
+	position: relative;
+	text-decoration: none;
+
+	cursor: pointer;
+
+	&InnerBox {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+
+	&Image {
+		background-color: #1a1a1a;
+		background-size: contain;
+		background-position: center center;
+		background-repeat: no-repeat;
+		width: 100%;
+		flex: 2;
+		position: relative;
+		transition: 1s;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 100px;
+		color: $textColorSecondary;
+		text-decoration: none;
+	}
+
+	&ContentBox {
+		background-color: #1c1c1c;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		flex: 1;
+		width: 100%;
+		height: 100%;
+		padding: 10px;
+	}
+
+	&TextBox {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		gap: 15px;
+		height: 100%;
+	}
+
+	&ActionsBox {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-end;
+		width: 100%;
+		padding-top: 10px;
+	}
+
+	.actionItem {
+		width: 100%;
+		height: 100%;
+		color: $colorContrast;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 30px;
+		cursor: pointer;
+		transition: 0.3s;
+
+		&:hover {
+			scale: 1.05;
+		}
+	}
+
+	.title {
+		font-size: 20px;
+		font-family: $fontFamilyHeading;
+		color: $textColorMain;
+		width: 100%;
+		padding-top: 10px;
+	}
+
+	.description {
+		color: #1d1d1d;
+		font-family: $fontFamilyRegular;
+		font-size: 15px;
+	}
+
+	.price {
+		color: #000;
+		font-size: 25px;
+		font-family: $fontFamilyHeading;
+	}
+}
+
+.modelTypes {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.modelButton {
+	width: 22px;
+	height: 22px;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.actionButtons {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.actionButton {
+	width: 90px;
+	height: 22px;
+	box-shadow: 0px 0px 2px 0px #000000bf inset;
+	background: #161616;
+	border-radius: 2px;
+	border: none;
+	cursor: pointer;
+}

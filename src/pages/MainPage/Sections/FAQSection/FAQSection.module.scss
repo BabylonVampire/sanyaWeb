@@ -1,0 +1,138 @@
+@import '/src/lib/theme/theme.scss';
+
+.questionsList {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	gap: 20px;
+}
+
+.FAQInnerBox {
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 50px 20px;
+	max-width: 1200px;
+
+	@media screen and (max-width: 600px) {
+		padding: 20px;
+	}
+}
+
+.FaqAccordion {
+	max-width: 800px;
+	width: 100%;
+	overflow: hidden;
+	background-color: transparent;
+	border-radius: 20px;
+	padding: 20px;
+}
+
+.panelText {
+	font-size: 18px;
+	line-height: 32px;
+	color: $textColorSecondary;
+}
+
+:global(.ant-collapse-header) {
+	padding: 8px 16px !important;
+	color: $textColorSecondary !important;
+}
+
+:global(.ant-collapse-expand-icon) {
+	margin-top: 4px;
+}
+
+.collapseBox {
+	max-width: 1200px;
+	width: 100%;
+	height: 500px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	gap: 20px;
+	position: relative;
+	background-color: $colorLightBlueBack;
+	box-shadow: 0px 0px 5px 0px #000000bf inset;
+
+	@media screen and (max-width: 1200px) {
+		height: auto;
+	}
+}
+
+.contentBox {
+	padding: 20px 40px;
+
+	@media screen and (max-width: 600px) {
+		padding: 20px 10px;
+	}
+}
+
+.faqImage {
+	position: relative;
+	width: 320px;
+	height: 100%;
+	background-image: url(../../../../assets/images/shipping.png);
+	background-size: cover;
+	background-position: center;
+}
+
+.divider {
+	max-width: 250px;
+	width: 100%;
+	height: 2px;
+	background-color: #000;
+}
+
+.button {
+	border-radius: 40px;
+	padding: 20px 35px;
+	font-size: 18px;
+	text-decoration: none;
+	background-color: $colorContrast;
+	color: $textColorInvert;
+	font-family: $fontFamilyRegular;
+	font-weight: bold;
+}
+
+.subText {
+	margin-bottom: 20px;
+}
+
+@media (max-width: 1200px) {
+	.faqImage {
+		display: none;
+	}
+
+	.collapseBox {
+		justify-content: center;
+		padding: 20px 10px;
+	}
+
+	.headInner {
+		margin: 0 10px;
+	}
+
+	.sectionTitle {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.linkToFaq {
+		width: auto;
+	}
+}
+
+@media (max-width: 500px) {
+	.faqImage {
+		width: 100%;
+	}
+
+	.collapseBox {
+		padding: 10px 0;
+	}
+}

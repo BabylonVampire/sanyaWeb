@@ -1,0 +1,27 @@
+.loader {
+	height: 100%;
+	margin: 50px auto 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.icon {
+	background-image: url(/src/assets/images/logo.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: 90px;
+	height: 90px;
+	animation: rotation 1s linear infinite forwards;
+}
+
+@-webkit-keyframes rotation {
+	from {
+		rotate: 0deg;
+	}
+
+	to {
+		rotate: 360deg;
+	}
+}

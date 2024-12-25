@@ -1,0 +1,190 @@
+@import '../../../../theme/theme.scss';
+
+.container {
+	width: 100%;
+	padding: 20px 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header {
+	width: 100%;
+	color: var(--textColorMain);
+	font-family: var(--font-family-heading);
+	box-sizing: border-box;
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 7px;
+}
+
+.heading {
+	font-size: 34px;
+	font-family: $fontFamilyHeading;
+	color: #fff;
+	text-decoration: none;
+}
+
+.logoText {
+	font-size: 40px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	color: #fff;
+}
+
+.head {
+	display: flex;
+	align-items: center;
+}
+
+.btn1 {
+	line-height: 0;
+	border: none;
+	background: inherit;
+	font-size: 42px;
+	color: $textColorSecondary;
+}
+
+.input {
+	border: none;
+	padding: 10px;
+	flex: 1;
+	background: inherit;
+	font-size: 20px;
+	font-weight: 400;
+	width: 100%;
+}
+
+.btn {
+	line-height: 0;
+	border: none;
+	background: inherit;
+	font-size: 22px;
+	font-weight: 400;
+	position: absolute;
+	right: 15px;
+}
+
+.contacts {
+	flex-direction: column;
+	color: $textColorMain;
+	font-size: 18px;
+	font-family: $fontFamilyRegular;
+	box-sizing: border-box;
+	display: flex;
+	height: 100%;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.sideBarFooter {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding-bottom: 20px;
+}
+
+.linkBox {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+
+.link {
+	font-size: 40px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #cdcdcd;
+	transition: 0.3s;
+
+	&:hover,
+	&:active {
+		color: #fff;
+	}
+}
+
+.phone {
+	font-weight: 800;
+	font-size: 25px;
+	margin: 10px auto;
+	color: $textColorMain;
+	align-items: center;
+}
+
+.pages {
+	flex-direction: column;
+	align-items: right;
+
+	& > * {
+		border: none !important;
+	}
+}
+
+.searchButton,
+.phoneButton {
+	display: none;
+	line-height: 0;
+	border: none;
+	background: inherit;
+	font-size: 22px;
+	font-weight: 400;
+	color: $textColorSecondary;
+	text-decoration: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.contentBox {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	width: 100%;
+	justify-content: flex-end;
+}
+
+.blackout {
+	position: absolute;
+	background-color: #000;
+	opacity: 0.2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+}
+
+:global(.ant-drawer-content) {
+	background-color: #161616 !important;
+}
+
+:global(.ant-drawer-close) {
+	color: $textColorSecondary !important;
+}
+
+@media screen and (max-width: 700px) {
+	.searchButton,
+	.phoneButton {
+		display: flex;
+	}
+
+	.search {
+		display: none;
+	}
+
+	.logotext {
+		width: 190px;
+		font-size: 23px;
+		font-weight: 800;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.phoneButton {
+		display: none;
+	}
+}

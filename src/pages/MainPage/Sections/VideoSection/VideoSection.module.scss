@@ -1,0 +1,104 @@
+@import '../../../../lib/theme/theme.scss';
+
+.videoSection {
+	width: 100%;
+	max-width: 1200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 40px;
+	padding: 0 20px;
+
+	@media screen and (max-width: 1200px) {
+		gap: 20px;
+	}
+}
+
+.topBox {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	gap: 60px;
+
+	@media screen and (max-width: 1200px) {
+		gap: 20px;
+	}
+}
+
+.videoContainer {
+	flex: 2;
+}
+
+.contentBox {
+	padding: 40px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	gap: 15px;
+	background-color: $colorLightBlueBack;
+	box-shadow: 0px 0px 5px 0px #000000bf inset;
+}
+
+.heading {
+	font-family: $fontFamilyRegular;
+	font-size: 40px;
+
+	@media screen and (max-width: 600px) {
+		font-size: 32px;
+	}
+}
+
+.description {
+	font-size: 40px;
+	color: #717171;
+
+	@media screen and (max-width: 600px) {
+		font-size: 32px;
+	}
+}
+
+.iframeVideo {
+	width: 100%;
+	aspect-ratio: 7 / 4;
+}
+
+.bottomBox {
+	width: 100%;
+	padding: 5px 0px;
+}
+
+.videoCarousel {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 40px;
+
+	@media screen and (max-width: 600px) {
+		gap: 20px;
+	}
+
+	& > * {
+		flex: 1;
+	}
+}
+
+.videoBtn {
+	border: none;
+	padding: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.iframeVideoItem {
+	pointer-events: none;
+	width: 100%;
+	aspect-ratio: 7 / 4;
+}
+
+@media screen and (max-width: 1200px) {
+	.topBox {
+		flex-direction: column;
+	}
+}

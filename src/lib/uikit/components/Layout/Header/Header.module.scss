@@ -1,0 +1,112 @@
+@import '../../../../theme/theme.scss';
+
+.container {
+	margin: 15px 0;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	max-width: 1200px;
+	justify-content: space-between;
+}
+.header {
+	width: 100%;
+	background-color: $colorMain;
+	color: $textColorMain;
+	font-size: 20px;
+	font-family: $fontFamilyHeading;
+	box-sizing: border-box;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+
+	.logoText {
+		color: $textColorMain;
+		text-decoration: none;
+		font-size: 40px;
+		letter-spacing: 1px;
+		text-wrap: nowrap;
+	}
+
+	.search {
+		margin: 0 10px;
+		max-width: 600px;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border: 2px solid $colorContrast;
+		border-radius: 40px;
+	}
+
+	.input {
+		padding: 10px 15px;
+		flex: 1;
+		border: none;
+		background: inherit;
+		height: 10%;
+		font-size: 20px;
+		font-weight: 400;
+		margin-right: 5px;
+	}
+
+	.input:focus {
+		border: none;
+		outline: 0;
+	}
+
+	.btn1 {
+		line-height: 0;
+		padding: 15px;
+		border: none;
+		background: inherit;
+		font-size: 20px;
+		font-weight: 600;
+		cursor: pointer;
+	}
+}
+.contacts {
+	color: $textColorMain;
+	flex-direction: row;
+	font-family: $fontFamilyRegular;
+	box-sizing: border-box;
+	justify-content: space-between;
+	display: flex;
+	align-items: center;
+	padding-right: 15px;
+
+	.phone {
+		font-weight: 700;
+		font-size: 20px;
+		cursor: pointer;
+	}
+}
+
+.buttonBox {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	justify-content: center;
+	min-width: 300px;
+}
+
+.mainBody {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	width: 100%;
+}
+
+.link {
+	font-size: 30px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: $textColorContrast;
+}
+
+@media screen and (max-width: 500px) {
+	.container {
+		width: auto;
+	}
+}

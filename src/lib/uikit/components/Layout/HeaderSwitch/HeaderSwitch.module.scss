@@ -1,0 +1,9 @@
+@import '../../../../theme/theme.scss';
+
+.header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-bottom: 2px solid #44444449;
+	background-color: $colorMain;
+}

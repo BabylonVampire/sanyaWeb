@@ -1,0 +1,32 @@
+@import '../../lib/theme/theme.scss';
+
+.contactsPage {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.innerBox {
+	background-color: $colorMain;
+	width: 100%;
+	max-width: 1200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.cards {
+	justify-content: center;
+	display: flex;
+	gap: 20px;
+	width: 100%;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+
+@media screen and (max-width: 600px) {
+	.cards {
+		padding: 0 10px;
+	}
+}

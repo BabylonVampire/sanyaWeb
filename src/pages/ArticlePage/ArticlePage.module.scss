@@ -1,0 +1,112 @@
+@import '../../lib/theme/theme.scss';
+
+.articlePage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.innerBox {
+	gap: 30px;
+	max-width: 1200px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.contentBox {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+
+.articleTitle {
+	padding-left: 20px;
+	margin-top: 30px;
+	font-size: 50px;
+	font-family: $fontFamilyHeading;
+	color: $textColorMain;
+}
+
+.articleImage {
+	width: 100%;
+	// background-size: cover;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #161616;
+}
+
+.paragraphBox {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.textBox {
+	width: 100%;
+	display: flex;
+	padding: 20px;
+
+	background-color: var(--color-light-blue-back);
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.footer {
+	gap: 10px;
+	display: flex;
+	flex-direction: column;
+	padding: 10px 0;
+	border-top: 1px solid #555555;
+}
+
+.author {
+	font-family: $fontFamilyRegular;
+	font-size: 20px;
+	color: $textColorSecondary;
+}
+
+.date {
+	font-family: $fontFamilyRegular;
+	font-size: 20px;
+	color: $textColorSecondary;
+}
+
+.paragraph {
+	font-size: 20px;
+	font-family: $fontFamilyRegular;
+	color: $textColorSecondary;
+}
+
+@media (max-width: 1200px) {
+	.articleTitle {
+		font-size: 30px;
+	}
+
+	.innerBox {
+		gap: 0;
+	}
+
+	.articleImage {
+		height: 500px;
+		width: 500px;
+	}
+	.contentBox {
+		padding: 10px;
+	}
+}
+
+@media (max-width: 750px) {
+	.contentBox {
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 520px) {
+	.articleImage {
+		height: 400px;
+		width: auto;
+	}
+}

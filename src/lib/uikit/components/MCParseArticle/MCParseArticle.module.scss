@@ -1,0 +1,36 @@
+@import '../../../theme/theme.scss';
+
+.article {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	&Title {
+		text-align: center;
+		padding-top: 10px;
+		font-size: 25px;
+		font-weight: 600;
+		font-family: var(--font-family-regular);
+		border-bottom: 1px solid rgb(193, 236, 248);
+	}
+
+	&Paragraph {
+		text-indent: 40px;
+		font-size: 18px;
+		font-family: $fontFamilyRegular;
+		color: $textColorSecondary;
+	}
+
+	&List {
+		font-size: 18px;
+		font-family: $fontFamilyRegular;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		padding-left: 40px;
+
+		& > li {
+			list-style-position: inside;
+		}
+	}
+}

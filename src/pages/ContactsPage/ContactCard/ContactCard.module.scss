@@ -1,0 +1,45 @@
+@import '../../../lib/theme/theme.scss';
+
+.contactCard {
+	max-width: 590px;
+	width: 100%;
+	padding: 10px;
+
+	background-color: $colorLightBlueBack;
+}
+
+.map {
+	cursor: pointer;
+	background-color: $colorMain;
+	width: 100%;
+	border: none;
+	overflow: hidden;
+}
+
+.mapBox {
+	width: 100%;
+	display: flex;
+	box-sizing: border-box;
+	position: relative;
+	justify-content: center;
+}
+
+.textBlock {
+	width: 100%;
+	padding: 10px;
+}
+
+.text {
+	color: $colorSecondary;
+	font-size: 15px;
+	font-family: $fontFamilyRegular;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.shortAddress {
+	font-size: 25px;
+	line-height: 35px;
+	font-family: $fontFamilyHeading;
+}

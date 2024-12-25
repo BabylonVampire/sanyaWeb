@@ -1,0 +1,134 @@
+@import '/src/lib/theme/theme.scss';
+
+$buttonPrimaryColor: #373737;
+$buttonPrimaryColorActive: #373737;
+
+$buttonOutlinedColor: $colorMain;
+$buttonOutlinedColorActive: #373737;
+
+$buttonTextColor: #717171;
+
+$buttonLinkTextColor: #717171;
+
+$buttonFontSizeSmall: 15px;
+$buttonFontSizeMedium: 18px;
+$buttonFontSizeLarge: 40px;
+
+$buttonHeightSmall: 50px;
+$buttonHeightMedium: 70px;
+$buttonHeightLarge: 100px;
+
+// GLOBAL
+
+.Button {
+	user-select: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: $textColorMain;
+	transition: 0.35s;
+	border: none;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	font-family: $fontFamilyRegular;
+}
+
+.contentBox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	gap: 20px;
+}
+
+// GLOBAL
+
+//TYPES
+
+.buttonTypePrimary {
+	background-color: $buttonPrimaryColor;
+	color: $buttonLinkTextColor;
+	font-weight: bold;
+}
+
+.buttonTypePrimary:hover {
+	background-color: $buttonPrimaryColorActive;
+}
+
+.buttonTypeOutlined {
+	border: solid 1px $buttonPrimaryColor;
+	background-color: $buttonOutlinedColor;
+	color: $buttonLinkTextColor;
+	font-weight: bold;
+}
+
+.buttonTypeOutlined:hover {
+	background-color: $buttonOutlinedColorActive;
+}
+
+.buttonTypeText {
+	background-color: transparent;
+}
+
+.buttonTypeText:hover {
+	background-color: $buttonTextColor;
+}
+
+.buttonTypeLink {
+	background-color: transparent;
+	color: $buttonLinkTextColor;
+}
+
+.buttonTypeLink:hover {
+	text-decoration: underline;
+}
+
+//TYPES
+
+//SIZES
+
+.buttonSizeSmall {
+	padding: 15px 15px;
+	font-size: $buttonFontSizeSmall;
+	height: 40px;
+}
+
+.buttonSizeMedium {
+	padding: 20px 20px;
+	font-size: $buttonFontSizeMedium;
+}
+
+.buttonSizeLarge {
+	padding: 25px 25px;
+	font-size: $buttonFontSizeLarge;
+}
+
+//SIZES
+
+//DISABLED
+
+.buttonDisabled {
+	filter: blur(4px);
+	-webkit-filter: blur(4px);
+	cursor: auto;
+	pointer-events: none;
+}
+
+//DISABLED
+
+//SHAPE
+
+.buttonShapeSmooth {
+	border-radius: 5px;
+}
+
+.buttonShapeCircle {
+	border-radius: 5px;
+}
+
+.buttonShapeSquare {
+	border-radius: 5px;
+}
+
+//SHAPE

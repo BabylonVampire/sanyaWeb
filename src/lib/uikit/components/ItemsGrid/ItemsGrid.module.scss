@@ -1,0 +1,105 @@
+@import '../../../theme/theme.scss';
+
+.itemsGrid {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: center;
+	gap: 20px;
+}
+
+.card {
+	width: 100%;
+	max-width: 500px;
+	height: 310px;
+	background-color: #161616;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	text-decoration: none;
+
+	&InnerBox {
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+	}
+
+	&Image {
+		background-color: #161616;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		height: 100%;
+		flex: 1;
+		position: relative;
+		transition: 1s;
+
+		&Placeholder {
+			flex: 1;
+			height: 100%;
+			font-size: 50px;
+			color: $textColorSecondary;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	&ContentBox {
+		border-left: none;
+		background-color: #161616;
+		box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 5px 0px inset;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex: 1;
+		width: 100%;
+		height: 100%;
+		padding: 10px;
+	}
+
+	&TextBox {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 15px;
+		height: 100%;
+	}
+
+	.title {
+		color: $textColorMain;
+		font-size: 20px;
+		font-family: $fontFamilyHeading;
+		width: 100%;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #555555;
+	}
+
+	.description {
+		color: $textColorSecondary;
+		font-family: $fontFamilyRegular;
+		font-size: 15px;
+	}
+
+	.author {
+		font-family: $fontFamilyRegular;
+		font-size: 20px;
+		color: $textColorSecondary;
+	}
+
+	.date {
+		font-family: $fontFamilyRegular;
+		font-size: 15px;
+		color: $textColorSecondary;
+	}
+
+	&Footer {
+		border-top: 1px solid #555555;
+		padding-top: 10px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+}

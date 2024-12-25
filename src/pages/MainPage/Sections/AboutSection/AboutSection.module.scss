@@ -1,0 +1,102 @@
+@import '../../../../lib/theme/theme.scss';
+
+.aboutSection {
+	width: 100%;
+	max-width: 1200px;
+	padding: 0 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+
+.image {
+	flex: 1;
+	width: 100%;
+	background-image: url(../../../../assets/images/about.png);
+	background-size: cover;
+	background-position: center;
+}
+
+.container {
+	height: 350px;
+
+	@media screen and (max-width: 600px) {
+		height: auto;
+	}
+}
+
+.container,
+.smallContainer {
+	display: flex;
+	flex-direction: row;
+}
+
+.smallContainer {
+	display: flex;
+	flex-direction: row;
+	height: 90px;
+	width: 100%;
+	background-color: $colorLightBlueBack;
+}
+
+.contacts {
+	flex: 1;
+	box-shadow: 0px 0px 5px 0px #000000bf inset;
+}
+
+.smallImage {
+	flex: 2;
+	background-image: url(../../../../assets/images/about.png);
+	background-size: cover;
+	background-position: center;
+}
+
+.textBox {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 40px;
+	background-color: $colorLightBlueBack;
+	box-shadow: 0px 0px 5px 0px #000000bf inset;
+}
+
+.heading {
+	font-size: $fontSizeXL;
+	font-family: $fontFamilyRegular;
+}
+
+.description {
+	font-size: 22px;
+	color: #717171;
+}
+
+.subHeading {
+	font-size: 22px;
+	color: $textColorMain;
+	font-family: $fontFamilyRegular;
+	font-weight: bold;
+}
+
+.divider {
+	width: 100px;
+	height: 4px;
+	border-radius: 20px;
+	background: $backgroundGradient;
+}
+
+.aboutButton {
+	width: 300px;
+}
+
+@media screen and (max-width: 1200px) {
+	.image {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.aboutButton {
+		width: 250px;
+	}
+}

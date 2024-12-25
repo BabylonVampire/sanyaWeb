@@ -1,0 +1,162 @@
+@import '../../../theme/theme.scss';
+
+.modalWindowWrapper {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+	top: 0;
+	left: 0;
+}
+
+.background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #00000059;
+}
+
+.exitButton {
+	line-height: 0;
+	border: none;
+	background-color: transparent;
+	font-size: 25px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #868686;
+	cursor: pointer;
+}
+
+.modalWindow {
+	position: relative;
+	z-index: 1;
+	background-color: $colorMain;
+	padding: 40px;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.7490196078) inset;
+}
+
+.input {
+	font-family: $fontFamilyRegular;
+	font-size: 18px;
+	font-weight: 400;
+	padding: 10px;
+}
+
+.check {
+	color: $colorContrast;
+	border-radius: $buttonBorderRadius;
+	line-height: 0;
+	height: auto;
+}
+
+.textarea {
+	padding: 10px;
+	height: 100%;
+	width: 100%;
+	font-size: 18px;
+	font-weight: 400;
+	align-items: center;
+	border: none;
+	font-family: $fontFamilyRegular;
+	resize: none;
+}
+
+:global(.ant-select-selector) {
+	border-radius: 10px !important;
+	padding: 10px !important;
+	font-weight: 400;
+	border: 1px solid rgb(193 236 248) !important;
+	box-shadow: none !important;
+}
+
+:global(.ant-select-selection-search-input),
+:global(.ant-select-selection-item),
+:global(.ant-select-selection-placeholder) {
+	font-family: $fontFamilyRegular !important;
+	font-size: 18px !important;
+}
+
+:global(.ant-select-single) {
+	height: auto;
+}
+
+.input:focus,
+.textarea:focus {
+	outline: 0;
+}
+
+.formFields {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.firmwareSettingsBox {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+
+	& > * {
+		flex: 1;
+	}
+}
+
+.inputNumber {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.inputTitle {
+	font-size: 13px;
+}
+
+.confirmText {
+	font-family: $fontFamilyRegular;
+	font-size: 16px;
+	padding-left: 15px;
+	color: #717171;
+	text-decoration: underline;
+}
+
+.firmwareSelect {
+	min-width: 248px;
+}
+
+.confirm {
+	align-items: center;
+	box-sizing: content-box;
+	display: flex;
+}
+
+:global(.ant-input-number-outlined) {
+	height: 100%;
+	border-radius: 10px;
+	border: 1px solid rgb(193 236 248) !important;
+	box-shadow: none !important;
+}
+
+:global(.ant-input-number-input-wrap) {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 600px) {
+	.firmwareSettingsBox {
+		flex-direction: column;
+	}
+
+	.firmwareSelect {
+		min-width: 0;
+	}
+}

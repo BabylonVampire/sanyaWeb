@@ -1,0 +1,62 @@
+@import '../../../lib/theme/theme.scss';
+
+.newsCard {
+	width: 100%;
+	max-width: 1000px;
+	min-height: 120px;
+	background-color: #161616;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	cursor: pointer;
+	text-decoration: none;
+	box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 5px 0px inset;
+}
+
+.image {
+	max-width: 200px;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+.content {
+	&Body {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	&Box {
+		padding: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 10px;
+	}
+}
+
+.title {
+	color: $textColorMain;
+	font-size: 20px;
+	font-family: $fontFamilyHeading;
+}
+
+.description {
+	color: $textColorSecondary;
+	font-family: $fontFamilyRegular;
+	font-size: 15px;
+}
+
+.date {
+	font-family: $fontFamilyRegular;
+	font-size: 15px;
+	color: $textColorSecondary;
+}
+
+@media (max-width: 500px) {
+	.image {
+		max-width: 100px;
+	}
+}
