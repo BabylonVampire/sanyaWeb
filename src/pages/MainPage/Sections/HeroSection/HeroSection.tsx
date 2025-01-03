@@ -4,9 +4,9 @@ import styles from './HeroSection.module.scss';
 
 const HeroSection = () => {
 	const carouselImages = [
-		'http://gafurov-prod-test.online/assets/carouselSlides/slide_1.png',
-		'http://gafurov-prod-test.online/assets/carouselSlides/slide_2.png',
-		'http://gafurov-prod-test.online/assets/carouselSlides/slide_3.png',
+		'http://gafurov-prod-test.online/assets/carouselSlides/slide_1.webp',
+		'http://gafurov-prod-test.online/assets/carouselSlides/slide_2.webp',
+		'http://gafurov-prod-test.online/assets/carouselSlides/slide_3.webp',
 	];
 	return (
 		<section className={styles.HeroSection}>

@@ -74,13 +74,17 @@
 	position: relative;
 	background-color: var(--color-light-blue-back);
 	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.7490196078) inset;
+
+	@media screen and (max-width: 1200px) {
+		height: auto;
+	}
 }
 
 .faqImage {
 	position: relative;
 	width: 320px;
 	height: 100%;
-	background-image: url(https://s3-alpha-sig.figma.com/img/7c23/6031/b940a581054e72f1a70199f44423ceeb?Expires=1735516800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=a4l-rPiOVgkSKb6Jd3dvaapAGPNiBKTw~IIyywFCV54veGryPba3lMzBP91Zmg3gKEqF3zM-x1sMeWIknNDRAUD476wENfhBzuS6KH5jGmA-jAmDiVbKbvVSH3IdeTMIceeyKZZQwPYett9u9GdCUmW8vFvJXSom19WjZ1KxqfVwgWcL6BjDH34Yooe~fPWuNNC2zykVUgwlfo4UE-3jGe7U4rOH8A2mnWOpNj1qvBwnA6BxqrdKCWcZKzQGv8n2UHn5t0odP-fxZ21W1flZZZCzI6wnEYFxFGY5uJgayZ58DgqwGsWNcjX3K~KatxmNs97UNYVtHvgtqlChsNhYMA__);
+	background-image: url(/src/assets/images/shipping.webp);
 	background-size: cover;
 	background-position: center;
 }

@@ -63,13 +63,20 @@ const ProductPage: FC<TProps> = ({ product }) => {
 											key={spec.name + index}
 										>
 											<div className={styles.productSpec}>
-												<p
+												<div
 													className={
 														styles.productSpecName
 													}
 												>
-													{spec.name}
-												</p>
+													<p className={styles.label}>
+														{spec.name}
+													</p>
+													<div
+														className={
+															styles.specDivider
+														}
+													/>
+												</div>
 												<p
 													className={
 														styles.productSpecValue

@@ -14,23 +14,6 @@ const Address: FC = () => {
 				<div className={styles.address}>
 					<div className={styles.cards}>
 						<ContactCard
-							coords={[22.544464, 114.083521]}
-							zoom={17}
-							shortAddress="Китай, г. Шэньчжэнь"
-							fullAddress={
-								<>
-									<p style={{ fontSize: '20px' }}>
-										Адрес: China, Guangdong province,
-										Shenzhen City, district Futian, Shennan
-										str., SEG PLAZA
-									</p>
-									<p style={{ fontSize: '20px' }}>
-										Адрес на китайском: 赛格广场
-									</p>
-								</>
-							}
-						/>
-						<ContactCard
 							coords={[55.700877, 37.731344]}
 							zoom={17}
 							shortAddress="Москва (пункт выдачи заказов)"

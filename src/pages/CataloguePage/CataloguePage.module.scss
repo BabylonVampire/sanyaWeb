@@ -37,6 +37,7 @@
 	font-family: $fontFamilyRegular;
 	color: $textColorMain;
 	font-size: 50px;
+	font-weight: 200;
 }
 
 .divider {
@@ -67,6 +68,7 @@
 	&Heading {
 		border-bottom: solid 1px #555555;
 		padding-bottom: 10px;
+		font-weight: 400;
 	}
 
 	&Text {
@@ -177,7 +179,7 @@
 	}
 
 	&Chosen {
-		background-color: #6ac2e3 !important;
+		background-color: hsl(0deg 0% 79.9% / 31%) !important;
 	}
 }
 

@@ -1,41 +1,10 @@
 import { memo } from 'react';
 import styles from './Footer.module.scss';
 import React from 'react';
-
-type TLink = {
-	link: string;
-	heading: string;
-};
+import { links } from '../Layout.constants';
 
 const Footer = memo(() => {
-	// const date = new Date().getFullYear();
-
-	const links: TLink[] = [
-		{
-			heading: 'Главная',
-			link: '/',
-		},
-		{
-			heading: 'Услуги',
-			link: '/favor',
-		},
-		{
-			heading: 'О нас',
-			link: '/about',
-		},
-		// {
-		// 	heading: 'Статьи',
-		// 	link: '/articles',
-		// },
-		{
-			heading: 'Партнерам',
-			link: '/partners',
-		},
-		{
-			heading: 'Контакты',
-			link: '/contacts',
-		},
-	];
+	const date = new Date().getFullYear();
 
 	return (
 		<footer className={styles.footer}>
@@ -48,13 +17,13 @@ const Footer = memo(() => {
 								return (
 									<li
 										className={styles.option}
-										key={`footerLink_${link.heading}_${link.link}`}
+										key={`footerLink_${link.title}_${link.link}`}
 									>
 										<a
 											href={link.link}
 											className={styles.link}
 										>
-											{link.heading}
+											{link.title}
 										</a>
 									</li>
 								);
@@ -123,10 +92,10 @@ const Footer = memo(() => {
 							className={`${styles.innerLinks} ${styles.copyrightBox}`}
 						>
 							<li className={styles.option}>
-								{/* <p>
+								<p>
 									© {date} Все права защищены. Сделано
 									компанией Gafurov digital Production
-								</p> */}
+								</p>
 							</li>
 						</div>
 					</ul>

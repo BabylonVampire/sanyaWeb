@@ -43,6 +43,7 @@
 .heading {
 	font-family: $fontFamilyRegular;
 	font-size: 40px;
+	font-weight: 400;
 
 	@media screen and (max-width: 600px) {
 		font-size: 32px;
@@ -50,7 +51,7 @@
 }
 
 .description {
-	font-size: 40px;
+	font-size: 32px;
 	color: #717171;
 
 	@media screen and (max-width: 600px) {

@@ -25,13 +25,15 @@
 			width: 100%;
 			font-size: 40px;
 			font-family: $fontFamilyRegular;
+			font-weight: 200;
 		}
 
 		.productInfo {
 			width: 100%;
 			display: flex;
 			flex-direction: row;
-			gap: 20px;
+			background-color: $colorLightBlueBack;
+			box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 5px 0px inset;
 
 			& > div {
 				width: 50%;
@@ -40,8 +42,6 @@
 			.imageWrapper {
 				width: 100%;
 				padding: 20px;
-				background-color: $colorLightBlueBack;
-				box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 5px 0px inset;
 
 				.image {
 					width: 100%;
@@ -52,11 +52,10 @@
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
-				background-color: #161616;
 
 				position: relative;
 				overflow: hidden;
-				max-width: 464px;
+				max-width: 400px;
 				width: 100%;
 			}
 		}
@@ -73,7 +72,7 @@
 }
 
 .productSpecsList {
-	padding: 40px;
+	padding: 40px 20px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -112,10 +111,12 @@
 	flex-direction: row;
 
 	& > p {
+		font-weight: 500;
+		color: $textColorMain;
 		font-family: $fontFamilyRegular;
 		width: 50%;
-		font-size: 16px;
-		min-width: 210px;
+		font-size: 13px;
+		min-width: 100px;
 	}
 }
 
@@ -156,7 +157,25 @@
 }
 
 .productSpecName {
-	font-weight: 600;
+	display: flex;
+	flex-direction: row;
+	min-width: 210px;
+	width: 100%;
+
+	.label {
+		color: $textColorSecondary;
+		font-family: $fontFamilyRegular;
+		font-size: 13px;
+	}
+
+	.specDivider {
+		position: relative;
+		margin: 0 10px;
+		top: 9px;
+		width: 100%;
+		height: 1px;
+		background-color: #7171714a;
+	}
 }
 
 @media (max-width: 1200px) {
