@@ -27,9 +27,7 @@ export const Sidebar = () => {
 			/>
 			<div className={styles.header}>
 				<div className={styles.head}>
-					<a className={styles.logoText} href="/">
-						LOGO
-					</a>
+					<a className={styles.mainLogo} href="/" />
 				</div>
 				<div className={styles.contentBox}>
 					<a href="" className={styles.phoneButton}>
@@ -44,8 +42,16 @@ export const Sidebar = () => {
 
 			<Drawer
 				title={
-					<a className={styles.heading} href="/">
-						LOGO
+					<a className={styles.logoText} href={`/`}>
+						<div className={styles.logo} />
+						<div className={styles.logoTextBox}>
+							<div className={styles.topLogoText}>
+								Bristan Wero
+							</div>
+							<p className={styles.bottomLogoText}>
+								Italian leather
+							</p>
+						</div>
 					</a>
 				}
 				placement={placement}
@@ -74,9 +80,9 @@ export const Sidebar = () => {
 						>
 							Заказать звонок
 						</Button>
-						<Button shape="circle" type="outlined">
+						{/* <Button shape="circle" type="outlined">
 							Прайс лист
-						</Button>
+						</Button> */}
 					</div>
 				</div>
 			</Drawer>

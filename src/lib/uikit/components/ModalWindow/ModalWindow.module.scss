@@ -38,7 +38,7 @@
 	z-index: 1;
 	background-color: $colorMain;
 	padding: 40px;
-	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.7490196078) inset;
+	box-shadow: $boxShadow;
 }
 
 .input {

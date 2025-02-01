@@ -32,10 +32,10 @@ const MCCard: FC<ICardProps> = ({ style, product, className }) => {
 				style={style}
 			>
 				<div
-					style={{ backgroundImage: `url(${product?.imageSrc})` }}
+					style={{ backgroundImage: `url(${product?.images?.[0]})` }}
 					className={styles.cardImage}
 				>
-					{!product?.imageSrc && <FaRegImage />}
+					{!product?.images.length && <FaRegImage />}
 				</div>
 				<div className={styles.cardContentBox}>
 					<div className={styles.cardTextBox}>
@@ -45,10 +45,11 @@ const MCCard: FC<ICardProps> = ({ style, product, className }) => {
 					</div>
 					<div className={styles.cardActionsBox}>
 						<div className={styles.modelTypes}>
-							{modelTypes.map((model) => {
+							{modelTypes.map((model, index) => {
 								return (
 									<button
 										className={styles.modelButton}
+										key={`${model} ${index}`}
 										style={{
 											backgroundColor: model.modelColor,
 										}}

@@ -36,46 +36,35 @@ const Footer = memo(() => {
 					<ul className={styles.optionsCol}>
 						<div className={styles.innerLinks}>
 							<li className={styles.option}>
+								<div className={styles.qrCode} />
+							</li>
+							<li className={styles.option}>
 								<p className={styles.colHeading}>Звоните</p>
-								<p>+7 (993) 615 77-47</p>
-								<p>+7 (993) 289 38-56</p>
-								<p>+7 (939) 849 00-88</p>
+								<p>+7 (995) 919 94-49 </p>
 							</li>
 							<li className={styles.option}>
 								<p className={styles.colHeading}>Пишите</p>
-								<p>pmkrazvitie@yandex.ru</p>
+								<p>bristan.wero@bk.ru</p>
 							</li>
 							<li className={styles.option}>
 								<p className={styles.colHeading}>Часы работы</p>
-								<p>9:00-21:00 ПН-ВС</p>
+								<p>8:00-17:00</p>
 							</li>
 							<li className={styles.option}>
 								<p className={styles.colHeading}>
 									Наши мессенджеры
 								</p>
 								<div className={styles.outLinks}>
-									<a
-										className={styles.outLink}
-										href="https://wa.me/message/HSJOUB5NAG3FD1"
-									>
+									<a className={styles.outLink} href="">
 										<img
-											src={`${
-												import.meta.env
-													.VITE_PATH_TO_PORTFOLIO
-											}/waBwIcon.svg`}
+											src={`http://gafurov-prod-test.online/assets/waBwIcon.svg`}
 											height="30px"
 											alt=""
 										/>
 									</a>
-									<a
-										className={styles.outLink}
-										href="https://t.me/razvitiepmk"
-									>
+									<a className={styles.outLink} href="">
 										<img
-											src={`${
-												import.meta.env
-													.VITE_PATH_TO_PORTFOLIO
-											}/tgBwIcon.svg`}
+											src={`http://gafurov-prod-test.online/assets/tgBwIcon.svg`}
 											height="30px"
 											alt=""
 										/>

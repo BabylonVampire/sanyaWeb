@@ -7,6 +7,8 @@ const HeroSection = () => {
 		'http://gafurov-prod-test.online/assets/carouselSlides/slide_1.webp',
 		'http://gafurov-prod-test.online/assets/carouselSlides/slide_2.webp',
 		'http://gafurov-prod-test.online/assets/carouselSlides/slide_3.webp',
+		'http://gafurov-prod-test.online/assets/carouselSlides/slide_4.webp',
+		'http://gafurov-prod-test.online/assets/carouselSlides/slide_5.webp',
 	];
 	return (
 		<section className={styles.HeroSection}>

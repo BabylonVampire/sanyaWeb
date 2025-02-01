@@ -8,13 +8,12 @@ export type TFaq = {
 export const panelStyle: React.CSSProperties = {
 	marginBottom: 15,
 	borderRadius: '5px',
-	border: 'none',
+	border: 'solid 1px #dedede',
 	borderBottom: 'none',
-	backgroundColor: '#fff',
+	backgroundColor: 'var(--color-main)',
 	fontFamily: 'var(--font-family-regular)',
 	color: 'var(--textColorSecondary)',
 	letterSpacing: '1px',
 	fontSize: '20px',
-	background: '#1C1C1C80',
-	boxShadow: '0px 0px 5px 0px #000000BF inset',
+	boxShadow: 'var(--box-shadow)',
 };

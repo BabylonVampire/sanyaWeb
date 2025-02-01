@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { mockBindedProduct } from './db/mockData.tsx';
 import news from './db/news.json';
 import products from './db/products.json';
 import reviews from './db/reviews.json';
@@ -82,16 +81,17 @@ export const App = () => {
 							path="/news/"
 							key={'/news/'}
 						/>
-						{[
-							...(products as unknown as TProduct[]),
-							mockBindedProduct,
-						].map((product) => (
-							<Route
-								element={<ProductPageAsync product={product} />}
-								path={`/asic/${product.id}/`}
-								key={`/asic/${product.id}/`}
-							/>
-						))}
+						{[...(products as unknown as TProduct[])].map(
+							(product) => (
+								<Route
+									element={
+										<ProductPageAsync product={product} />
+									}
+									path={`/asic/${product.id}/`}
+									key={`/asic/${product.id}/`}
+								/>
+							)
+						)}
 						<Route
 							element={<NotFoundPageAsync />}
 							path={'*'}

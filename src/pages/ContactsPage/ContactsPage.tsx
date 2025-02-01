@@ -14,12 +14,12 @@ const Address: FC = () => {
 				<div className={styles.address}>
 					<div className={styles.cards}>
 						<ContactCard
-							coords={[55.700877, 37.731344]}
+							coords={[55.573144, 37.609137]}
 							zoom={17}
 							shortAddress="Москва (пункт выдачи заказов)"
 							fullAddress={
 								<p style={{ fontSize: '20px' }}>
-									Россия, Москва, Люблинская ул., 10, стр. 1-6
+									Варшавское шоссе 21-й км, с26
 								</p>
 							}
 						/>

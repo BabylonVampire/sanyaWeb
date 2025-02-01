@@ -37,13 +37,13 @@
 	flex: 1;
 	gap: 15px;
 	background-color: $colorLightBlueBack;
-	box-shadow: 0px 0px 5px 0px #000000bf inset;
+	box-shadow: $boxShadow;
 }
 
 .heading {
 	font-family: $fontFamilyRegular;
 	font-size: 40px;
-	font-weight: 400;
+	font-weight: 300;
 
 	@media screen and (max-width: 600px) {
 		font-size: 32px;
@@ -53,6 +53,7 @@
 .description {
 	font-size: 32px;
 	color: #717171;
+	font-weight: 200;
 
 	@media screen and (max-width: 600px) {
 		font-size: 32px;
@@ -67,6 +68,7 @@
 .bottomBox {
 	width: 100%;
 	padding: 5px 0px;
+	overflow-x: auto;
 }
 
 .videoCarousel {
@@ -94,7 +96,6 @@
 
 .iframeVideoItem {
 	pointer-events: none;
-	width: 100%;
 	aspect-ratio: 7 / 4;
 }
 

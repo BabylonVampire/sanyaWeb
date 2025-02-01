@@ -13,7 +13,7 @@
 	width: 100%;
 	max-width: 500px;
 	height: 310px;
-	background-color: #161616;
+	background-color: $colorSecondary;
 	overflow: hidden;
 	position: relative;
 	cursor: pointer;
@@ -27,7 +27,7 @@
 	}
 
 	&Image {
-		background-color: #161616;
+		background-color: $colorSecondary;
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -49,8 +49,8 @@
 
 	&ContentBox {
 		border-left: none;
-		background-color: #161616;
-		box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 5px 0px inset;
+		background-color: $colorSecondary;
+		box-shadow: $boxShadow;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;

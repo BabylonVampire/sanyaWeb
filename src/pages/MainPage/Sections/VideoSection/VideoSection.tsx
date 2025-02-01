@@ -3,9 +3,12 @@ import React, { useState } from 'react';
 
 const VideoSection = () => {
 	const videos = [
-		'https://www.youtube-nocookie.com/embed/3Uuyl1GzUlY?si=XwRulAa67Ok65Qhp&amp;controls=0',
-		'https://www.youtube-nocookie.com/embed/vrTT9cM4UMA?si=uKm9gqt7nTeFWtPj&amp;controls=0',
-		'https://www.youtube-nocookie.com/embed/ZSobr1EXGpA?si=k_Hzv2Jnx5tdRvQG&amp;controls=0',
+		'https://rutube.ru/play/embed/25910b7f056ca2068474a14c4b52a5e4/?p=Dlj1kjpkqe5pmcqOOQNlXQ',
+		'https://rutube.ru/play/embed/07de6b0b93a9d63e442ac758b7ecaadc/?p=6U2rCLm0FXz8nkZOMy-sTQ',
+		'https://rutube.ru/play/embed/f86d1574adaa0e4a524af36dcceb0049/?p=yyrEz2rIdxXjHaMBhTT8NQ',
+		//
+		'https://rutube.ru/play/embed/3f1c788aa7302775aa6fe0172a1a86dd/?p=EZpYZJXVbY99qiUCfslX-g',
+		'https://rutube.ru/play/embed/ebdde4f9efe23bc0ff4fac8a0101f9ce/?p=EDMMT3JaVNzjCgz77ICI6w',
 	];
 
 	const [currentVideo, setCurrentVideo] = useState<string>(videos[0]);
@@ -15,13 +18,14 @@ const VideoSection = () => {
 				<div className={styles.contentBox}>
 					<h2 className={styles.heading}>Наши новые видео</h2>
 					<p className={styles.description}>
-						Какой асик майнер выбрать в апреле 2024 года?
+						Lorem ipsum dolor sit amet, consectetur adipiscing
 					</p>
 				</div>
 				<div className={styles.videoContainer}>
 					<iframe
 						className={styles.iframeVideo}
 						src={currentVideo}
+						loading="lazy"
 						frameBorder="0"
 					/>
 				</div>
@@ -38,6 +42,7 @@ const VideoSection = () => {
 								className={styles.iframeVideoItem}
 								src={video}
 								frameBorder="0"
+								allowFullScreen={false}
 							/>
 						</button>
 					))}

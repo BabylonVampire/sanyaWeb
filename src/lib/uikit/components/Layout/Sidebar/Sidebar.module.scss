@@ -2,7 +2,7 @@
 
 .container {
 	width: 100%;
-	padding: 20px 10px;
+	padding: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -10,8 +10,8 @@
 
 .header {
 	width: 100%;
-	color: var(--textColorMain);
-	font-family: var(--font-family-heading);
+	color: $textColorMain;
+	font-family: $fontFamilyHeading;
 	box-sizing: border-box;
 	align-items: center;
 	display: flex;
@@ -23,20 +23,70 @@
 .heading {
 	font-size: 34px;
 	font-family: $fontFamilyHeading;
-	color: #fff;
+	color: $textColorMain;
 	text-decoration: none;
 }
 
+.mainLogo {
+	width: 100px;
+	height: 67px;
+	background-image: url(../../../../../assets/images/logo.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: relative;
+	right: 20px;
+}
+
+.logo {
+	width: 100px;
+	height: 67px;
+	background-image: url(../../../../../assets/images/logo.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
 .logoText {
-	font-size: 40px;
-	letter-spacing: 1px;
+	display: flex;
+	flex-direction: row;
 	text-decoration: none;
-	color: #fff;
+	align-items: center;
 }
 
 .head {
 	display: flex;
 	align-items: center;
+}
+
+.logoText {
+	display: flex;
+	flex-direction: row;
+	text-decoration: none;
+}
+
+.logoTextBox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.topLogoText {
+	color: $textColorMain;
+	font-size: 35px;
+	font-family: $fontFamilyLogo;
+	font-weight: 700;
+	text-wrap: nowrap;
+	display: flex;
+	align-items: center;
+}
+
+.bottomLogoText {
+	color: $textColorSecondary;
+	font-size: 35px;
+	font-family: $fontFamilyCursive;
+	text-wrap: nowrap;
+	display: flex;
+	align-items: center;
+	line-height: 25px;
 }
 
 .btn1 {
@@ -99,12 +149,12 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	color: #cdcdcd;
+	color: $textColorSecondary;
 	transition: 0.3s;
 
 	&:hover,
 	&:active {
-		color: #fff;
+		color: $textColorMain;
 	}
 }
 
@@ -159,7 +209,7 @@
 }
 
 :global(.ant-drawer-content) {
-	background-color: #161616 !important;
+	background-color: $colorSecondary !important;
 }
 
 :global(.ant-drawer-close) {

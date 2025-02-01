@@ -4,14 +4,14 @@
 	width: 100%;
 	max-width: 1000px;
 	min-height: 120px;
-	background-color: #161616;
+	background-color: $colorSecondary;
 	overflow: hidden;
 	position: relative;
 	display: flex;
 	flex-direction: row;
 	cursor: pointer;
 	text-decoration: none;
-	box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 5px 0px inset;
+	box-shadow: $boxShadow;
 }
 
 .image {

@@ -1,32 +1,17 @@
 import React, { FC, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Button, ModalWindow, TProduct } from '../../lib';
+import { ModalWindow, TProduct } from '../../lib';
 import MCParseArticle from '../../lib/uikit/components/MCParseArticle/MCParseArticle';
-import { getPriceWithCurrency } from '../../lib/utils/getPrice';
 import styles from './ProductPage.module.scss';
+import { Image } from 'antd';
 
 interface TProps {
 	product: TProduct;
 }
 
 const ProductPage: FC<TProps> = ({ product }) => {
-	const getAvailability = (
-		availability: 'preorder' | 'empty' | number | string
-	): string => {
-		if (typeof availability === 'number') {
-			return `${availability} шт.`;
-		} else if (typeof availability === 'string') {
-			return availability;
-		} else {
-			if (availability === 'preorder') {
-				return 'Предзаказ';
-			} else {
-				return 'Отсутствует';
-			}
-		}
-	};
-
 	const [showModal, setShowModal] = useState<boolean>(false);
+	const [chosenImage, setChosenImage] = useState<string>(product.images[0]);
 
 	return (
 		<div className={styles.ProductPage}>
@@ -48,11 +33,21 @@ const ProductPage: FC<TProps> = ({ product }) => {
 					<h3 className={styles.title}>{product.title}</h3>
 					<div className={styles.productInfo}>
 						<div className={styles.imageWrapper}>
-							<img
+							<Image
 								className={styles.image}
-								src={product.imageSrc}
+								src={chosenImage}
 								alt={product.title}
 							/>
+							<div className={styles.imagesCarousel}>
+								{product.images.map((image) => (
+									<img
+										onClick={() => setChosenImage(image)}
+										src={image}
+										className={styles.carouselImage}
+										key={image}
+									/>
+								))}
+							</div>
 						</div>
 						<div className={styles.productSpecs}>
 							<ul className={styles.productSpecsList}>
@@ -89,13 +84,7 @@ const ProductPage: FC<TProps> = ({ product }) => {
 									)
 								)}
 							</ul>
-							<div className={styles.productSpecsFooter}>
-								{product?.availability && (
-									<p className={styles.availabilityStatus}>
-										Наличие:{' '}
-										{getAvailability(product.availability)}
-									</p>
-								)}
+							{/* <div className={styles.productSpecsFooter}>
 								<div className={styles.productOrder}>
 									{product.price && (
 										<div
@@ -133,7 +122,7 @@ const ProductPage: FC<TProps> = ({ product }) => {
 										Заказать
 									</Button>
 								</div>
-							</div>
+							</div> */}
 						</div>
 					</div>
 				</div>

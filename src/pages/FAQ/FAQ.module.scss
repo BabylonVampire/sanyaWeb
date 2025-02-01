@@ -18,8 +18,9 @@
 		display: flex;
 		flex-direction: column;
 		padding: 20px;
-		background: rgba(28, 28, 28, 0.5);
-		box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 5px 0px inset;
+		background: $colorMain;
+		border: solid 1px #dedede;
+		box-shadow: $boxShadow;
 		align-items: center;
 	}
 }
@@ -52,6 +53,7 @@
 
 .panelText {
 	font-size: 18px;
+	color: $textColorSecondary;
 }
 
 :global(.ant-collapse-header) {
@@ -73,7 +75,7 @@
 	gap: 20px;
 	position: relative;
 	background-color: var(--color-light-blue-back);
-	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.7490196078) inset;
+	box-shadow: $boxShadow;
 
 	@media screen and (max-width: 1200px) {
 		height: auto;
@@ -101,7 +103,7 @@
 	padding: 20px 35px;
 	font-size: 20px;
 	text-decoration: none;
-	background-color: #373737;
+	background-color: $colorSecondary;
 	color: $textColorMain;
 	font-family: $fontFamilyRegular;
 }

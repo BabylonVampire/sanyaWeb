@@ -9,16 +9,18 @@ $colorLightBlueBack: var(--color-light-blue-back);
 $buttonBorderRadius: var(--button-border-radius);
 $fontFamilyRegular: var(--font-family-regular);
 $fontFamilyHeading: var(--font-family-heading);
+$fontFamilyLogo: var(--font-family-logo);
+$fontFamilyCursive: var(--font-family-cursive);
 $backgroundGradient: var(--background-gradient);
 $colorShadow: var(--color-shadow);
 $fontSizeXL: var(--font-size-xl);
+$boxShadow: var(--box-shadow);
 
 :root {
-	--color-main: #1c1c1c;
+	--color-main: #fff; //1c1c1c
 	--color-contrast: #3ba8c7;
-	--color-secondary: #242424;
-	--color-light-blue-back: #161616;
-
+	--color-secondary: #e7e7e7; //161616
+	--color-light-blue-back: #e7e7e7; //161616
 	--color-shadow: #000000a6;
 
 	--background-gradient: linear-gradient(
@@ -27,15 +29,19 @@ $fontSizeXL: var(--font-size-xl);
 		rgba(59, 168, 199, 1) 100%
 	);
 
-	--textColorMain: #fff;
-	--textColorInvert: #000;
+	--box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 16%) inset; //$boxShadow;
+
+	--textColorMain: #000; //fff
+	--textColorInvert: #fff; //000
 	--textColorSecondary: #717171;
 	--textColorContrast: #3ba8c7;
 
 	--button-border-radius: 20px;
 
-	--font-family-regular: Manrope, sans-serif;
+	--font-family-regular: Nunito, sans-serif;
 	--font-family-heading: Manrope, sans-serif;
+	--font-family-logo: LogoFont;
+	--font-family-cursive: Ephesis;
 
 	// --font-size-xs
 	// --font-size-s

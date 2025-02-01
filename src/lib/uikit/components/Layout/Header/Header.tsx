@@ -17,7 +17,15 @@ export const Header = () => {
 			<div className={styles.mainBody}>
 				<div className={styles.header}>
 					<a className={styles.logoText} href={`/`}>
-						LOGO
+						<div className={styles.logo} />
+						<div className={styles.logoTextBox}>
+							<div className={styles.topLogoText}>
+								Bristan Wero
+							</div>
+							<p className={styles.bottomLogoText}>
+								Italian leather
+							</p>
+						</div>
 					</a>
 				</div>
 
@@ -25,15 +33,6 @@ export const Header = () => {
 					<PagesBlock />
 
 					<div className={styles.buttonBox}>
-						<Button
-							size="small"
-							shape="circle"
-							type="outlined"
-							className={styles.orderButton}
-						>
-							Прайс лист
-						</Button>
-
 						<Button
 							size="small"
 							shape="circle"

@@ -17,9 +17,14 @@
 	font-size: 17px;
 	color: $textColorSecondary;
 	transition: 0.3s;
+	background-color: transparent;
 
 	&:not(:last-child) {
-		border-right: solid 1px #373737;
+		border-right: solid 1px $textColorSecondary;
+	}
+
+	&:hover {
+		background-color: #f3f3f3;
 	}
 }
 

@@ -17,7 +17,7 @@
 	}
 
 	&Image {
-		background-color: #1a1a1a;
+		background-color: #dbdbdb;
 		background-size: contain;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -34,7 +34,7 @@
 	}
 
 	&ContentBox {
-		background-color: #1c1c1c;
+		background-color: $colorMain;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
@@ -121,8 +121,8 @@
 .actionButton {
 	width: 90px;
 	height: 22px;
-	box-shadow: 0px 0px 2px 0px #000000bf inset;
-	background: #161616;
+	box-shadow: $boxShadow;
+	background: $colorSecondary;
 	border-radius: 2px;
 	border: none;
 	cursor: pointer;

@@ -10,10 +10,6 @@ import products from '../../db/products.json';
 import { TProduct } from '../../lib';
 
 const MainPage = () => {
-	const hitProducts = (products as TProduct[]).filter(
-		(product) => product.hit
-	);
-
 	return (
 		<main className={styles.mainPage}>
 			<Helmet>
@@ -30,7 +26,7 @@ const MainPage = () => {
 			<AboutSection />
 			<ProductsSection
 				title="Популярные товары"
-				productsList={hitProducts}
+				productsList={products as TProduct[]}
 			/>
 			<VideoSection />
 			<FAQSection />

@@ -1,14 +1,14 @@
 @import '/src/lib/theme/theme.scss';
 
-$buttonPrimaryColor: #373737;
-$buttonPrimaryColorActive: #373737;
+$buttonPrimaryColor: $colorSecondary;
+$buttonPrimaryColorActive: $colorSecondary;
 
 $buttonOutlinedColor: $colorMain;
-$buttonOutlinedColorActive: #373737;
+$buttonOutlinedColorActive: $colorSecondary;
 
-$buttonTextColor: #717171;
+$buttonTextColor: $textColorSecondary;
 
-$buttonLinkTextColor: #717171;
+$buttonLinkTextColor: $textColorSecondary;
 
 $buttonFontSizeSmall: 15px;
 $buttonFontSizeMedium: 18px;
@@ -57,7 +57,7 @@ $buttonHeightLarge: 100px;
 }
 
 .buttonTypeOutlined {
-	border: solid 1px $buttonPrimaryColor;
+	border: solid 1px $textColorSecondary;
 	background-color: $buttonOutlinedColor;
 	color: $buttonLinkTextColor;
 	font-weight: bold;

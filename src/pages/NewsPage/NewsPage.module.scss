@@ -1,3 +1,5 @@
+@import '../../lib/theme/theme.scss';
+
 .newsPage {
 	display: flex;
 	justify-content: center;
@@ -23,8 +25,9 @@
 		display: flex;
 		flex-direction: column;
 		padding: 20px;
-		background: rgba(28, 28, 28, 0.5);
-		box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 5px 0px inset;
+		background: $colorMain;
+		border: solid 1px #dedede;
+		box-shadow: $boxShadow;
 		align-items: center;
 	}
 }

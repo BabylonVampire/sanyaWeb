@@ -29,8 +29,8 @@
 	justify-content: center;
 	flex-direction: row;
 	gap: 20px;
-	background-color: #161616;
-	box-shadow: 0px 0px 5px 0px #000000bf inset;
+	background-color: $colorSecondary;
+	box-shadow: $boxShadow;
 }
 
 .heading {
@@ -73,8 +73,9 @@
 
 	&Text {
 		padding: 30px;
-		background: rgba(28, 28, 28, 0.5);
-		box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 5px 0px inset;
+		background: $colorMain;
+		border: solid 1px #dedede;
+		box-shadow: $boxShadow;
 		width: 450px;
 	}
 
@@ -117,23 +118,23 @@
 	padding: 10px !important;
 	font-weight: 400;
 	border: none !important;
-	background: #161616 !important;
-	color: #fff !important;
-	box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 5px 0px inset !important;
+	background: $colorSecondary !important;
+	color: #000 !important;
+	box-shadow: $boxShadow !important;
 }
 
 :global(.ant-select-dropdown) {
 	border-radius: 0 !important;
-	background-color: #161616 !important;
-	color: #fff !important;
+	background-color: $colorSecondary !important;
+	color: #000 !important;
 }
 
 :global(.ant-select-item-option-content) {
-	color: #fff !important;
+	color: #000 !important;
 }
 
 :global(.ant-select-item-option-selected) {
-	background-color: #0a0a0a !important;
+	background-color: #dedede !important;
 	border-radius: 0 !important;
 }
 
@@ -142,7 +143,7 @@
 :global(.ant-select-selection-placeholder) {
 	font-family: $fontFamilyRegular !important;
 	font-size: 18px !important;
-	color: #fff !important;
+	color: #000 !important;
 }
 
 :global(.ant-select-arrow) {
@@ -157,8 +158,9 @@
 	border-radius: 5px;
 	padding: 0px 20px;
 	border: none;
-	background: rgba(28, 28, 28, 0.5);
-	box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 5px 0px inset;
+	background: $colorMain;
+	border: solid 1px #dedede;
+	box-shadow: $boxShadow;
 	font-family: var(--font-family-regular);
 	font-size: 15px;
 	color: $textColorSecondary;
