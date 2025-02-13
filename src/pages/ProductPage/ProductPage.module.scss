@@ -46,12 +46,13 @@
 
 			.imageWrapper {
 				// width: calc(100% - 380px);
-				width: 490px;
+				width: 540px;
 				padding: 20px;
 				margin: 0 30px;
 				display: flex;
-				flex-direction: column;
+				// flex-direction: column;
 				gap: 20px;
+				justify-content: center;
 
 				& > div:first-child {
 					display: flex !important;
@@ -62,7 +63,7 @@
 				.image {
 					object-fit: cover;
 					height: 600px;
-					width: auto;
+					width: 450px;
 				}
 			}
 
@@ -107,13 +108,35 @@
 .carouselImage.active {
 	outline: 1px solid rgba(203, 67, 37, 0.825);
 	border-radius: 4px;
-	// box-shadow: 0px 0px 10px rgba(137, 137, 195, 0.619) ;
 }
 
 .carouselContainer {
 	position: relative;
 	padding-bottom: 10px;
 }
+
+.leftButton,
+.rightButton {
+	align-self: center;
+	cursor: pointer;
+	padding: 20px 0;
+	background-color: transparent;
+	border: none;
+	opacity: 0;
+}
+
+.imageWrapper:hover .leftButton,
+.imageWrapper:hover .rightButton {
+	opacity: 1;
+}
+
+.leftButton svg,
+.rightButton svg {
+	width: 40px;
+	height: auto;
+}
+
+
 
 .carouselButtonTop:disabled,
 .carouselButtonBottom:disabled {

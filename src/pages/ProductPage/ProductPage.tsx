@@ -17,39 +17,45 @@ const ProductPage: FC<TProps> = ({ product }) => {
 	const [showModal, setShowModal] = useState<boolean>(false);
 	const [chosenImage, setChosenImage] = useState<string>(product.images[0]);
 	
-	const [isOpen, setIsOpen] = useState(false);
-	const carouselRef = useRef<HTMLDivElement>(null);
-	const delta = 2;
-	const [position, setPosition] = useState(0)
-
 	const targetSpecs = ["Материал", "Тип", "Пол"]; // Выбираем характеристики, которые будут отображаться приоритетно - остальные скрыты
+	
+	const [isOpen, setIsOpen] = useState(false);
+	const [position, setPosition] = useState(0)
+	const carouselRef = useRef<HTMLDivElement>(null);
 
 	const scrollToImage = (delta: number) => {
 		carouselRef.current?.scrollBy({ top: 130 * delta, behavior: 'smooth' });
 	};
 
 	const scrollUp = () => {
-		scrollToImage(-delta);
+		scrollToImage(-2);
 	};
 
 	const scrollDown = () => {
-		scrollToImage(delta); 
+		scrollToImage(2); 
 	};
 
 	useEffect(() => {
 		const carouselElement = carouselRef.current;
-
 		if (!carouselElement) return;
 
-		const onScroll = () => {
-			const scrollTop = carouselElement.scrollTop;
-			const newPosition = scrollTop / 65;
-			setPosition(newPosition);
-		};
-
+		const onScroll = () => { setPosition(carouselElement.scrollTop / 65) };
+		
 		carouselElement.addEventListener('scroll', onScroll);
 		return () => carouselElement.removeEventListener('scroll', onScroll);
 	}, []); 
+
+	const switchToNextImage = () => {
+		const currentIndex = product.images.indexOf(chosenImage);
+		const nextImage = (currentIndex + 1) % product.images.length
+		setChosenImage(product.images[nextImage])
+	}
+
+	const switchToPrevImage = () => {
+		const currentIndex = product.images.indexOf(chosenImage);
+		const prevIndex = (currentIndex - 1 + product.images.length) % product.images.length;
+		setChosenImage(product.images[prevIndex]);
+	};
 
 
 	return (
@@ -84,7 +90,6 @@ const ProductPage: FC<TProps> = ({ product }) => {
 										onClick={() => setChosenImage(image)}
 										src={image}
 										className={`${styles.carouselImage} ${chosenImage === image ? styles.active : ''}`}
-
 										key={image}
 									/>
 								))}
@@ -96,11 +101,23 @@ const ProductPage: FC<TProps> = ({ product }) => {
 							</button>
 						</div>
 						<div className={styles.imageWrapper}>
+							<button onClick={switchToPrevImage} className={styles.leftButton}>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+									<title>chevron-left</title>
+									<path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+								</svg>
+							</button>
 							<Image
 								className={styles.image}
 								src={chosenImage}
 								alt={product.title}
 							/>
+							<button onClick={switchToNextImage} className={styles.rightButton}>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+									<title>chevron-right</title>
+									<path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+								</svg>
+							</button>
 						</div>
 						<div className={styles.productSpecs}>
 							<h3 className={styles.title}>{product.title}</h3>
