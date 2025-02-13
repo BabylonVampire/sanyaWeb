@@ -15,12 +15,14 @@ const ProductsSection: FC<TProps> = ({ productsList }) => {
 			<div className={styles.innerBox}>
 				<div className={styles.productsContainerWrapper}>
 					<div className={styles.productsContainer}>
-						{productsList.map((product, index) => (
-							<MCCard
-								product={product}
-								key={'product' + product.title + index}
-							/>
-						))}
+						{productsList
+							.slice(productsList.length - 6, productsList.length)
+							.map((product, index) => (
+								<MCCard
+									product={product}
+									key={'product' + product.title + index}
+								/>
+							))}
 					</div>
 				</div>
 			</div>

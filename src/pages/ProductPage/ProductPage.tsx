@@ -1,5 +1,4 @@
 import React, { FC, useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { ModalWindow, TProduct } from '../../lib';
 import MCParseArticle from '../../lib/uikit/components/MCParseArticle/MCParseArticle';
 import styles from './ProductPage.module.scss';
@@ -15,13 +14,6 @@ const ProductPage: FC<TProps> = ({ product }) => {
 
 	return (
 		<div className={styles.ProductPage}>
-			<Helmet>
-				<title>{`${product.title} - купить асик майнер Jasminer X4 1U 520 mhs по выгодной цене | Доставка из Китая в Москву, СПб и др. города РФ`}</title>
-				<meta
-					name="description"
-					content={`${product.title}. Доставка из Китая Асик майнеров в Москву, Санкт-Петербург и другие города России. Страхование грузов. Оплата банковской картой. Низкие цены`}
-				/>
-			</Helmet>
 			<ModalWindow
 				type="product"
 				show={showModal}

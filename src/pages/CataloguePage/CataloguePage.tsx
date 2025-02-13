@@ -3,12 +3,15 @@ import styles from './CataloguePage.module.scss';
 import products from '../../db/products.json';
 import MCCard from '../../lib/uikit/components/MCCard/MCCard';
 import PageDivider from '../../lib/uikit/components/PageDivider/PageDivider';
-import { TProduct } from '../../lib';
+import { EProductCategory, ESexTypes, TProduct } from '../../lib';
 import { Helmet } from 'react-helmet';
 import { FaArrowRightLong, FaCartShopping } from 'react-icons/fa6';
 
 const CataloguePage = () => {
 	const [filteredData, setFilteredData] = useState<TProduct[]>([]);
+	const [sex, setSex] = useState<ESexTypes[]>([]);
+	const [categories, setCategories] = useState<EProductCategory[]>([]);
+	const [data, setData] = useState<TProduct[]>([])
 
 	useEffect(() => {
 		let data: TProduct[] = [];
@@ -27,58 +30,51 @@ const CataloguePage = () => {
 					onClick: () => {},
 				},
 			],
-		})); //mockCatalogue;
+		}));
 
-		setFilteredData(data as TProduct[]);
+		setData(data as TProduct[])
 	}, []);
 
-	// useEffect(() => {
-	// 	setFilteredData(
-	// 		(data as TProduct[])
-	// 			.filter((product) => {
-	// 				return (
-	// 					(!types.length || types.includes(product?.algorithm)) &&
-	// 					(!manufacturers.length ||
-	// 						manufacturers.includes(product?.manufacturer))
-	// 				);
-	// 			})
-	// 			.sort((a, b) => {
-	// 				return (
-	// 					(-1) ** +(sortedData !== 'acc') *
-	// 					((a.price?.value || 0) - (b.price?.value || 0))
-	// 				);
-	// 			})
-	// 	);
-	// }, [types, manufacturers, sortedData]);
+	useEffect(() => {
+		setFilteredData(
+			(data as TProduct[])
+				.filter((product) => {
+					return (
+						(!sex.length || sex.includes(product?.sex)) &&
+						(!categories.length ||
+							categories.includes(product?.category))
+					);
+				})
+		);
+	}, [categories, sex, data]);
 
-	// const toggleManufacturer = (value: EManufacturers) => {
-	// 	if (manufacturers.includes(value)) {
-	// 		setManufacturers((prev) => prev.filter((item) => item !== value));
-	// 		return;
-	// 	}
+	const toggleSex = (value: ESexTypes) => {
+		if (sex.includes(value)) {
+			setSex((prev) => prev.filter((item) => item !== value));
+			return;
+		}
 
-	// 	setManufacturers((prev) => [...prev, value]);
-	// };
+		setSex((prev) => [...prev, value]);
+	};
 
-	// const toggleTypes = (value: EProductsTypes) => {
-	// 	if (types.includes(value)) {
-	// 		setTypes((prev) => prev.filter((item) => item !== value));
-	// 		return;
-	// 	}
+	const toggleCategories = (value: EProductCategory) => {
+		if (categories.includes(value)) {
+			setCategories((prev) => prev.filter((item) => item !== value));
+			return;
+		}
 
-	// 	setTypes((prev) => [...prev, value]);
-	// };
+		setCategories((prev) => [...prev, value]);
+	};
 
 	return (
 		<div className={styles.cataloguePage}>
 			<Helmet>
 				<title>
-					Асики для майнинга - купить Асик майнеры по выгодной цене |
-					Доставка из Китая в Москву, СПб и др. города РФ
+					Каталог
 				</title>
 				<meta
 					name="description"
-					content="Асики для майнинга (Майнеры). Доставка из Китая Асик майнеров в Москву, Санкт-Петербург и другие города России. Страхование грузов. Оплата банковской картой. Низкие цены"
+					// content="Асики для майнинга (Майнеры). Доставка из Китая Асик майнеров в Москву, Санкт-Петербург и другие города России. Страхование грузов. Оплата банковской картой. Низкие цены"
 				/>
 			</Helmet>
 			<div className={styles.innerBox}>
@@ -96,27 +92,26 @@ const CataloguePage = () => {
 						<div className={styles.filterForm}>
 							<div className={styles.filterByManufacturer}>
 								<h3 className={styles.filterHeading}>
-									Производитель
+									Пол
 								</h3>
-								{/* <div className={styles.checkBoxContainer}>
-									{Object.values(EManufacturers).map(
-										(manufacturer, index) => {
+								<div className={styles.checkBoxContainer}>
+									{Object.values(ESexTypes).map(
+										(sexItem, index) => {
 											const numberOfProducts =
 												data.filter(
 													(product) =>
-														product?.manufacturer ===
-														manufacturer
+														product?.sex ===
+														sexItem
 												).length;
 											return (
-												Boolean(numberOfProducts) && (
 													<button
 														key={
-															manufacturer + index
+															sexItem + index
 														}
-														className={`${styles.checkBox} ${manufacturers.includes(manufacturer) ? styles.checkBoxChosen : ''}`}
+														className={`${styles.checkBox} ${sex.includes(sexItem) ? styles.checkBoxChosen : ''}`}
 														onClick={() =>
-															toggleManufacturer(
-																manufacturer as EManufacturers
+															toggleSex(
+																sexItem as ESexTypes
 															)
 														}
 													>
@@ -125,7 +120,7 @@ const CataloguePage = () => {
 																styles.buttonText
 															}
 														>
-															{manufacturer}
+															{sexItem}
 														</div>
 														<div
 															className={
@@ -141,31 +136,30 @@ const CataloguePage = () => {
 														</div>
 													</button>
 												)
-											);
 										}
 									)}
-								</div> */}
+								</div>
 							</div>
 							<div className={styles.filterByType}>
 								<h3 className={styles.filterHeading}>
-									Алгоритм
+									Тип товара
 								</h3>
-								{/* <div className={styles.checkBoxContainer}>
-									{Object.values(EProductsTypes).map(
-										(type, index) => {
+								<div className={styles.checkBoxContainer}>
+									{Object.values(EProductCategory).map(
+										(category, index) => {
 											const numberOfProducts =
 												filteredData.filter(
 													(product) =>
-														product?.algorithm ===
-														type
+														product?.category ===
+														category
 												).length;
-											return numberOfProducts ? (
+											return (
 												<button
-													key={type + index}
-													className={`${styles.checkBox} ${types.includes(type) ? styles.checkBoxChosen : ''}`}
+													key={category + index}
+													className={`${styles.checkBox} ${categories.includes(category) ? styles.checkBoxChosen : ''}`}
 													onClick={() =>
-														toggleTypes(
-															type as EProductsTypes
+														toggleCategories(
+															category as EProductCategory
 														)
 													}
 												>
@@ -174,7 +168,7 @@ const CataloguePage = () => {
 															styles.buttonText
 														}
 													>
-														{type}
+														{category}
 													</div>
 													<div
 														className={
@@ -189,12 +183,10 @@ const CataloguePage = () => {
 														{numberOfProducts}
 													</div>
 												</button>
-											) : (
-												<></>
-											);
+											)
 										}
 									)}
-								</div> */}
+								</div>
 							</div>
 						</div>
 					</div>

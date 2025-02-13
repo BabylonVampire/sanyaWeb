@@ -1,32 +1,15 @@
 import React, { FC } from 'react';
 import { TArticlePage } from '../../lib';
 import styles from './ArticlePage.module.scss';
-import { Helmet } from 'react-helmet';
 
 interface IArticlePageProps {
 	content: TArticlePage;
 }
 
 const ArticlePage: FC<IArticlePageProps> = ({ content }) => {
-	const isReview = Boolean(content?.author);
 
 	return (
 		<div className={styles.articlePage}>
-			<Helmet>
-				<title>
-					{isReview
-						? `${content?.author}: Отзыв клиента о сотрудничестве с компанией Mining-Center`
-						: content.title}
-				</title>
-				<meta
-					name="description"
-					content={
-						isReview
-							? `${content?.author}: Отзыв клиента о сотрудничестве с компанией Mining-Center`
-							: ''
-					}
-				/>
-			</Helmet>
 			<div className={styles.innerBox}>
 				<div className={styles.articleTitle}>{content.title}</div>
 				<div className={styles.contentBox}>

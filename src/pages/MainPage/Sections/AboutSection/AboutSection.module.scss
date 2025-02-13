@@ -18,10 +18,10 @@
 }
 
 .container {
-	height: 350px;
+	min-height: 350px;
 
 	@media screen and (max-width: 600px) {
-		height: auto;
+		min-height: auto;
 	}
 }
 

@@ -18,3 +18,19 @@ export interface BindedProduct {
 	title: string;
 	price: Price;
 }
+
+export enum ESexTypes {
+	MALE = 'Мужское',
+	FEMALE = 'Женское'
+}
+
+export enum EProductCategory {
+	SHOULDER_BAGS = "Сумки на плечо",
+	WALLETS = "Кошельки",
+	ACCESSORIES = "Ключница, обложка на паспорт, автодокументы",
+	CARD_HOLDERS = "Картхолдеры",
+	BACKPACKS = "Рюкзаки",
+	BUSINESS_BRIEFCASES = "Деловые портфели",
+	BUSINESS_CARD_HOLDERS = "Визитница",
+	BAG = 'Чемодан',
+}
