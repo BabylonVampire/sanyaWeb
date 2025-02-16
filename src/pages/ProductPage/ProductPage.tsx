@@ -76,48 +76,49 @@ const ProductPage: FC<TProps> = ({ product }) => {
 			<div className={styles.innerBox}>
 				<div className={styles.productCard}>
 					<div className={styles.productInfo}>
-
-						<div className={styles.carouselContainer}>
-							<button className={styles.carouselButtonTop} onClick={scrollUp} disabled={position <= 0}>
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-									<title>chevron-up</title>
-									<path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" />
-								</svg>
-							</button>
-							<div className={styles.imagesCarousel} ref={carouselRef}>
-								{product.images.map((image) => (
-									<img
-										onClick={() => setChosenImage(image)}
-										src={image}
-										className={`${styles.carouselImage} ${chosenImage === image ? styles.active : ''}`}
-										key={image}
-									/>
-								))}
+						<div className={styles.carouselAndPreview}>
+							<div className={styles.carouselContainer}>
+								<button className={styles.carouselButtonTop} onClick={scrollUp} disabled={position <= 0}>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+										<title>chevron-up</title>
+										<path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" />
+									</svg>
+								</button>
+								<div className={styles.imagesCarousel} ref={carouselRef}>
+									{product.images.map((image) => (
+										<img
+											onClick={() => setChosenImage(image)}
+											src={image}
+											className={`${styles.carouselImage} ${chosenImage === image ? styles.active : ''}`}
+											key={image}
+										/>
+									))}
+								</div>
+								<button className={styles.carouselButtonBottom} onClick={scrollDown} disabled={position >= product.images.length }>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+										<title>chevron-down</title>
+										<path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+								</button>
 							</div>
-							<button className={styles.carouselButtonBottom} onClick={scrollDown} disabled={position >= product.images.length }>
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-									<title>chevron-down</title>
-									<path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
-							</button>
-						</div>
-						<div className={styles.imageWrapper}>
-							<button onClick={switchToPrevImage} className={styles.leftButton}>
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-									<title>chevron-left</title>
-									<path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
-								</svg>
-							</button>
-							<Image
-								className={styles.image}
-								src={chosenImage}
-								alt={product.title}
-							/>
-							<button onClick={switchToNextImage} className={styles.rightButton}>
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-									<title>chevron-right</title>
-									<path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-								</svg>
-							</button>
+							<div className={styles.imageWrapper}>
+								<button onClick={switchToPrevImage} className={styles.leftButton}>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+										<title>chevron-left</title>
+										<path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+									</svg>
+								</button>
+								<Image
+									className={styles.image}
+									src={chosenImage}
+									alt={product.title}
+								/>
+								<button onClick={switchToNextImage} className={styles.rightButton}>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+										<title>chevron-right</title>
+										<path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+									</svg>
+								</button>
+							</div>
 						</div>
 						<div className={styles.productSpecs}>
 							<h3 className={styles.title}>{product.title}</h3>

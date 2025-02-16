@@ -34,38 +34,39 @@
 			width: 100%;
 			display: flex;
 			flex-direction: row;
-			// background-color: $colorLightBlueBack;
-			// box-shadow: $boxShadow;
 			justify-content: center;
 
-			& > div {
-				// width: 50%;
-				width: 10%;
-				min-width: 120px
-			}
-
-			.imageWrapper {
-				// width: calc(100% - 380px);
-				width: 540px;
-				padding: 20px;
-				margin: 0 30px;
+			.carouselAndPreview {
 				display: flex;
-				// flex-direction: column;
-				gap: 20px;
-				justify-content: center;
-
-				& > div:first-child {
-					display: flex !important;
-					justify-content: center !important;
-					align-items: center !important;
+				
+				.carouselContainer {
+					width: 10%;
+					min-width: 120px;
 				}
 
-				.image {
-					object-fit: cover;
-					height: 600px;
-					width: 450px;
+				.imageWrapper {
+					width: 540px;
+					padding: 20px;
+					margin: 0 30px;
+					display: flex;
+					gap: 20px;
+					justify-content: center;
+			
+					&>div:first-child {
+						display: flex !important;
+						justify-content: center !important;
+						align-items: center !important;
+					}
+			
+					.image {
+						object-fit: cover;
+						height: 600px;
+						width: 450px;
+					}
 				}
 			}
+
+			
 
 			.productSpecs {
 				display: flex;
@@ -85,19 +86,14 @@
 
 .imagesCarousel {
 	display: flex;
-	// gap: 10px;
-	// flex-direction: row;
 	align-items: center;
 	overflow-x: auto;
-	// padding-bottom: 10px;
-
 	flex-direction: column;
 	margin-top: 55px;
 	height: 530px;	
-
 	scrollbar-width: none;
-
 }
+
 .carouselImage {
 	margin-top: 10px;
 	height: 120px;
@@ -171,11 +167,9 @@
 		
 
 .descriptionBox {
-	// box-shadow: $boxShadow;
 	width: 100%;
 	max-width: 880px;
 	padding: 20px;
-	// background-color: var(--color-light-blue-back);
 }
 
 .descriptionBox > div > div {
@@ -282,8 +276,7 @@
 	.label {
 		color: $textColorSecondary;
 		font-family: $fontFamilyRegular;
-		font-size: 13px;
-		
+		font-size: 13px;	
 		flex-shrink: 0;
 		width: fit-content;
 		max-width: 140px;
@@ -296,7 +289,6 @@
 		width: 100%;
 		height: 5px;
 		background-color: #71717123;
-
 		transform: scaleY(0.2);
 	}
 }
@@ -343,34 +335,42 @@
 		display: none;
 	}
 
+
 @media (max-width: 1200px) {
+	.leftButton,
+	.rightButton {
+		opacity: 1;
+	}
+
 	.title {
 		padding-left: 20px;
 	}
 
-	.productInfo {
-		// padding: 10px;
-		// flex-direction: column !important;
+	.productCard {
+		padding: 0 100px;
+	}
 
-		display: grid !important;
-		grid-template-columns: 1fr 2fr 2fr;
-		grid-template-rows: 2fr 1fr;
-		padding: 0 20px;
+	.productInfo {
+		flex-direction: column !important;
+
+		.carouselAndPreview {
+			justify-content: center;
+		}
 
 		.carouselContainer {
 			justify-self: center;
-			grid-column: 1;
 		}
 
 		.imageWrapper {
-			justify-self: end;
-			grid-column: 2/4;
+			justify-self: center;
 		}
 
 		.productSpecs {
-			grid-row: 2/3;
-			grid-column: 1/4;
+			justify-self: center;
+			align-self: center;
 		}
+
+		
 	}
 
 		.imageWrapper {
@@ -381,22 +381,74 @@
 			width: 100% !important;
 			max-width: 1200px !important;
 		}
+
+		.descriptionBox {
+			padding: 0 100px;
+			align-self: start;
+		}
 }
 
-@media (max-width: 750px) {
-	
+@media (max-width: 900px) {
+	.productCard {
+			padding: 0 50px;
+	}
+
+	.descriptionBox {
+		padding: 0 50px;
+		align-self: start;
+	}
+
+
 	.carouselContainer {
 		display: none;
 	}
 
 	.imageWrapper {
 		justify-self: center !important;
-		grid-column: 1/4 !important;
 	}
 	
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
+	.productSpecs {
+		overflow-x: auto !important;
+	}
+
+	.productSpecsList {
+		min-width: 350px;
+	}
+
+	.productCard {
+		padding: 0 10px;
+	}
+	
+	.descriptionBox {
+		padding: 10px;
+		align-self: start;
+	}
+
+	.imageWrapper {
+		// position: relative;
+		margin: 0 !important;
+	}
+
+	.leftButton,
+	.rightButton {
+		z-index: 1;
+		position: absolute;
+		background: rgba(255, 255, 255, 0.766);
+	}
+
+	.leftButton {
+		left: 0px;
+		border-radius: 0 30px 30px 0;
+	}
+
+	.rightButton {
+		right: 0px;
+		border-radius: 30px 0 0 30px;
+	}
+
 	.productOrder {
 		flex-direction: column;
 		gap: 20px;
