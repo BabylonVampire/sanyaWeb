@@ -18,28 +18,33 @@ const ProductPage: FC<TProps> = ({ product }) => {
 	const [chosenImage, setChosenImage] = useState<string>(product.images[0]);
 	
 	const targetSpecs = ["Материал", "Тип", "Пол"]; // Выбираем характеристики, которые будут отображаться приоритетно - остальные скрыты
-	
+	const visibleCaruselElements = 4 // сколько в карусели видно элементов в один момент, от этого идет расчет отключения кнопок
+	const imageHeight = 130; // высота изображения
+	const delta = 2; // на сколько изображений двигаем карусель 
+
 	const [isOpen, setIsOpen] = useState(false);
 	const [position, setPosition] = useState(0)
 	const carouselRef = useRef<HTMLDivElement>(null);
 
 	const scrollToImage = (delta: number) => {
-		carouselRef.current?.scrollBy({ top: 130 * delta, behavior: 'smooth' });
+		carouselRef.current?.scrollBy({ top: imageHeight * delta, behavior: 'smooth' });
 	};
 
 	const scrollUp = () => {
-		scrollToImage(-2);
+		scrollToImage(-delta);
 	};
 
 	const scrollDown = () => {
-		scrollToImage(2); 
+		scrollToImage(delta); 
 	};
-
+	
 	useEffect(() => {
 		const carouselElement = carouselRef.current;
 		if (!carouselElement) return;
 
-		const onScroll = () => { setPosition(carouselElement.scrollTop / 65) };
+		const onScroll = () => {
+			setPosition(carouselElement.scrollTop  / (imageHeight) )
+		};
 		
 		carouselElement.addEventListener('scroll', onScroll);
 		return () => carouselElement.removeEventListener('scroll', onScroll);
@@ -78,7 +83,7 @@ const ProductPage: FC<TProps> = ({ product }) => {
 					<div className={styles.productInfo}>
 						<div className={styles.carouselAndPreview}>
 							<div className={styles.carouselContainer}>
-								<button className={styles.carouselButtonTop} onClick={scrollUp} disabled={position <= 0}>
+								<button className={styles.carouselButtonTop} onClick={scrollUp} disabled={position <= 0.5}>
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 										<title>chevron-up</title>
 										<path d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" />
@@ -94,7 +99,7 @@ const ProductPage: FC<TProps> = ({ product }) => {
 										/>
 									))}
 								</div>
-								<button className={styles.carouselButtonBottom} onClick={scrollDown} disabled={position >= product.images.length }>
+								<button className={styles.carouselButtonBottom} onClick={scrollDown} disabled={position >= product.images.length-visibleCaruselElements-0.5	 }>
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 										<title>chevron-down</title>
 										<path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
