@@ -26,47 +26,57 @@
 			font-size: 40px;
 			font-family: $fontFamilyRegular;
 			font-weight: 200;
+
+			padding: 10px 10px 30px 10px;
 		}
 
 		.productInfo {
 			width: 100%;
 			display: flex;
 			flex-direction: row;
-			background-color: $colorLightBlueBack;
-			box-shadow: $boxShadow;
+			justify-content: center;
 
-			& > div {
-				width: 50%;
-			}
-
-			.imageWrapper {
-				width: calc(100% - 380px);
-				padding: 20px;
+			.carouselAndPreview {
 				display: flex;
-				flex-direction: column;
-				gap: 20px;
 
-				& > div:first-child {
-					display: flex !important;
-					justify-content: center !important;
-					align-items: center !important;
+				.carouselContainer {
+					width: 10%;
+					min-width: 120px;
 				}
 
-				.image {
-					height: 600px;
-					width: auto;
+				.imageWrapper {
+					width: 540px;
+					padding: 20px;
+					margin: 0 30px;
+					display: flex;
+					gap: 20px;
+					justify-content: center;
+
+					& > div:first-child {
+						display: flex !important;
+						justify-content: center !important;
+						align-items: center !important;
+					}
+
+					.image {
+						object-fit: cover;
+						height: 600px;
+						width: 450px;
+					}
 				}
 			}
 
 			.productSpecs {
 				display: flex;
 				flex-direction: column;
-				justify-content: space-between;
+				// justify-content: space-between;
+				justify-content: start;
 
 				position: relative;
 				overflow: hidden;
-				max-width: 400px;
-				width: 380px;
+				// max-width: 400px;
+				// width: 380px;
+				width: 400px;
 			}
 		}
 	}
@@ -74,26 +84,96 @@
 
 .imagesCarousel {
 	display: flex;
-	gap: 10px;
-	flex-direction: row;
 	align-items: center;
 	overflow-x: auto;
+	flex-direction: column;
+	margin-top: 55px;
+	height: 530px;
+	scrollbar-width: none;
 	padding-bottom: 10px;
+	padding-top: 10px;
+	gap: 10px;
 }
 
 .carouselImage {
-	height: 100px;
+	height: 120px;
 	width: auto;
+	border: 2px solid white;
+}
+
+.carouselImage.active {
+	outline: 1px solid rgba(203, 67, 37, 0.825);
+	border-radius: 4px;
+}
+
+.carouselContainer {
+	position: relative;
+	padding-bottom: 10px;
+}
+
+.leftButton,
+.rightButton {
+	align-self: center;
+	cursor: pointer;
+	padding: 20px 0;
+	background-color: transparent;
+	border: none;
+	opacity: 0;
+}
+
+.imageWrapper:hover .leftButton,
+.imageWrapper:hover .rightButton {
+	opacity: 1;
+}
+
+.leftButton svg,
+.rightButton svg {
+	width: 40px;
+	height: auto;
+}
+
+.carouselButtonTop:disabled,
+.carouselButtonBottom:disabled {
+	opacity: 0;
+	transition: opacity 0.2s ease-in;
+}
+
+.carouselButtonTop,
+.carouselButtonBottom {
+	width: 120px;
+	height: 35px;
+	position: absolute;
+	background-color: white;
+	border: none;
+	opacity: 1;
+	transition: opacity 0.2s ease-out;
+}
+
+.carouselButtonTop {
+	top: 15px;
+}
+
+.carouselButtonBottom {
+	bottom: 20px;
+}
+
+.carouselButtonTop svg,
+.carouselButtonBottom svg {
+	width: 40px;
 }
 
 .descriptionBox {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 880px;
 	padding: 20px;
 }
 
+.descriptionBox > div > div {
+	text-indent: 0;
+}
+
 .productSpecsList {
-	padding: 40px 20px;
+	padding: 0 10px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -107,6 +187,10 @@
 	& > * {
 		flex: 1;
 	}
+}
+
+.productSpecsList:first-of-type {
+	padding-bottom: 10px;
 }
 
 .productSpecItem {
@@ -130,6 +214,8 @@
 .productSpec {
 	display: flex;
 	flex-direction: row;
+
+	margin-bottom: 10px;
 
 	& > p {
 		font-weight: 500;
@@ -187,28 +273,97 @@
 		color: $textColorSecondary;
 		font-family: $fontFamilyRegular;
 		font-size: 13px;
+		flex-shrink: 0;
+		width: fit-content;
+		max-width: 140px;
 	}
 
 	.specDivider {
 		position: relative;
-		margin: 0 10px;
+		margin: 0 15px;
 		top: 9px;
 		width: 100%;
-		height: 1px;
-		background-color: #7171714a;
+		height: 5px;
+		background-color: #71717123;
+		transform: scaleY(0.2);
 	}
+}
+
+.sectionButton {
+	background-color: white;
+	border: none;
+	cursor: pointer;
+	text-align: left;
+	margin-left: 10px;
+	color: $textColorMain;
+	width: fit-content;
+
+	position: relative;
+}
+
+.sectionButton::after {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 1px;
+	background-color: $textColorMain;
+	bottom: 0px;
+	left: 0;
+
+	opacity: 1;
+
+	transform-origin: bottom;
+	transition: all 0.3s;
+	pointer-events: none;
+}
+
+.sectionButton:hover::after {
+	color: $textColorSecondary;
+	transform: translateY(3px);
+	opacity: 0;
+}
+
+.sectionButton:hover {
+	color: $textColorSecondary;
+}
+
+.sectionButtonHidden {
+	display: none;
 }
 
 @media (max-width: 1200px) {
+	.leftButton,
+	.rightButton {
+		opacity: 1;
+	}
+
 	.title {
 		padding-left: 20px;
 	}
-}
 
-@media (max-width: 900px) {
+	.productCard {
+		padding: 0 90px;
+	}
+
 	.productInfo {
-		padding: 10px;
 		flex-direction: column !important;
+
+		.carouselAndPreview {
+			justify-content: center;
+		}
+
+		.carouselContainer {
+			justify-self: center;
+		}
+
+		.imageWrapper {
+			justify-self: center;
+		}
+
+		.productSpecs {
+			justify-self: center;
+			align-self: center;
+		}
 	}
 
 	.imageWrapper {
@@ -219,9 +374,72 @@
 		width: 100% !important;
 		max-width: 1200px !important;
 	}
+
+	.descriptionBox {
+		padding: 0 100px;
+		align-self: start;
+	}
 }
 
-@media (max-width: 450px) {
+@media (max-width: 900px) {
+	.productCard {
+		padding: 0 40px;
+	}
+
+	.descriptionBox {
+		padding: 0 50px;
+		align-self: start;
+	}
+
+	.carouselContainer {
+		display: none;
+	}
+
+	.imageWrapper {
+		justify-self: center !important;
+	}
+}
+
+@media (max-width: 550px) {
+	.productSpecs {
+		overflow-x: auto !important;
+	}
+
+	.productSpecsList {
+		min-width: 350px;
+	}
+
+	.productCard {
+		padding: 0px;
+	}
+
+	.descriptionBox {
+		padding: 10px;
+		align-self: start;
+	}
+
+	.imageWrapper {
+		// position: relative;
+		margin: 0 !important;
+	}
+
+	.leftButton,
+	.rightButton {
+		z-index: 1;
+		position: absolute;
+		background: rgba(255, 255, 255, 0.766);
+	}
+
+	.leftButton {
+		left: 0px;
+		border-radius: 0 30px 30px 0;
+	}
+
+	.rightButton {
+		right: 0px;
+		border-radius: 30px 0 0 30px;
+	}
+
 	.productOrder {
 		flex-direction: column;
 		gap: 20px;
