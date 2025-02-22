@@ -9,7 +9,7 @@ export const WA_LINK = '';
 export const links = [
 	{ title: 'О нас', link: '/o-nas/' },
 	{ title: 'Каталог', link: '/asic/' },
-	{ title: 'FAQ', link: '/faq/' },
+	{ title: 'Вопросы и ответы', link: '/faq/' },
 	// { title: 'Отзывы', link: '/reviews/' },
 	// { title: 'Новости', link: '/news/' },
 	{ title: 'Контакты', link: '/kontakty/' },

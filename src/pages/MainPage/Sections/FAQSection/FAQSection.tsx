@@ -19,7 +19,7 @@ const FAQSection = () => {
 		<section className={styles.FAQInnerBox}>
 			<div className={styles.collapseBox}>
 				<div className={styles.contentBox}>
-					<MCHeading>FAQ</MCHeading>
+					<MCHeading>Вопросы и ответы</MCHeading>
 					<Collapse
 						className={styles.FaqAccordion}
 						accordion={true}

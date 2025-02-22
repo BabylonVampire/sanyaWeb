@@ -10,20 +10,20 @@ type ICardProps = {
 };
 
 const MCCard: FC<ICardProps> = ({ style, product, className }) => {
-	const modelTypes = [
-		{
-			modelId: '1',
-			modelColor: '#fff',
-		},
-		{
-			modelId: '2',
-			modelColor: '#fff',
-		},
-		{
-			modelId: '3',
-			modelColor: '#fff',
-		},
-	];
+	// const modelTypes = [
+	// 	{
+	// 		modelId: '1',
+	// 		modelColor: '#fff',
+	// 	},
+	// 	{
+	// 		modelId: '2',
+	// 		modelColor: '#fff',
+	// 	},
+	// 	{
+	// 		modelId: '3',
+	// 		modelColor: '#fff',
+	// 	},
+	// ];
 
 	return (
 		<a className={styles.card} href={`/asic/${product.id}`}>
@@ -43,7 +43,7 @@ const MCCard: FC<ICardProps> = ({ style, product, className }) => {
 							{product?.title.slice(0, 40)}...
 						</div>
 					</div>
-					<div className={styles.cardActionsBox}>
+					{/* <div className={styles.cardActionsBox}>
 						<div className={styles.modelTypes}>
 							{modelTypes.map((model, index) => {
 								return (
@@ -61,7 +61,7 @@ const MCCard: FC<ICardProps> = ({ style, product, className }) => {
 							<button className={styles.actionButton}></button>
 							<button className={styles.actionButton}></button>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</a>

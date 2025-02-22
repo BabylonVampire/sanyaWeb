@@ -2,7 +2,7 @@
 
 .container {
 	width: 100%;
-	padding: 10px;
+	padding: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -34,7 +34,6 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 	position: relative;
-	right: 20px;
 }
 
 .logo {
@@ -55,6 +54,8 @@
 .head {
 	display: flex;
 	align-items: center;
+	position: absolute;
+	left: -20px;
 }
 
 .logoText {
@@ -67,6 +68,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: relative;
+	left: -10px;
 }
 
 .topLogoText {
@@ -87,6 +90,7 @@
 	display: flex;
 	align-items: center;
 	line-height: 25px;
+	font-weight: 100;
 }
 
 .btn1 {

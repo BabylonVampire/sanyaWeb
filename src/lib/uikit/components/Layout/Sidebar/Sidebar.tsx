@@ -28,6 +28,10 @@ export const Sidebar = () => {
 			<div className={styles.header}>
 				<div className={styles.head}>
 					<a className={styles.mainLogo} href="/" />
+					<div className={styles.logoTextBox}>
+						<div className={styles.topLogoText}>Bristan Wero</div>
+						<p className={styles.bottomLogoText}>Italian leather</p>
+					</div>
 				</div>
 				<div className={styles.contentBox}>
 					<a href="" className={styles.phoneButton}>

@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
 import { ModalWindow, TProduct } from '../../lib';
 import MCParseArticle from '../../lib/uikit/components/MCParseArticle/MCParseArticle';
 import styles from './ProductPage.module.scss';

@@ -25,7 +25,7 @@ const FAQ = () => {
 			</Helmet>
 			<PageDivider className={styles.headBox}>
 				<div className={styles.headInner}>
-					<MCHeading>FAQ</MCHeading>
+					<MCHeading>Вопросы и ответы</MCHeading>
 					<p className={styles.subText}>Остались вопросы?</p>
 					<a className={styles.button} href="#feedback">
 						Свяжитесь с нами!

@@ -18,7 +18,7 @@ const VideoSection = () => {
 				<div className={styles.contentBox}>
 					<h2 className={styles.heading}>Наши новые видео</h2>
 					<p className={styles.description}>
-						Lorem ipsum dolor sit amet, consectetur adipiscing
+						Актуальные видео с нашего канала!
 					</p>
 				</div>
 				<div className={styles.videoContainer}>
