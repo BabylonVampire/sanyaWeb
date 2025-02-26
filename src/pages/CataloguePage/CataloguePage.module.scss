@@ -49,20 +49,47 @@
 
 .filter {
 	&Background {
+		display: flex;
+		// gap: 5px;
 		margin-top: 0 !important;
 		margin-bottom: 50px !important;
+		justify-content: center;
+		background: white !important;
+		box-shadow: none !important;
+		border-bottom: 1px solid rgba(202, 202, 202, 0.577);
 	}
 
 	&Box {
 		position: relative;
 		z-index: 1;
 		width: 100%;
-		max-width: 1200px;
-		margin: 0 auto;
+		max-width: 350px;
+		min-height: 500px;
+		padding: 20px;
 		display: flex;
 		flex-direction: row;
-		align-items: center;
 		gap: 20px;
+
+		justify-content: center;
+	}
+
+	&Box::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0px;
+			bottom: 0;
+			background: inherit;
+			filter: brightness(.85);
+			z-index: 1;
+			// border: 1px solid black;
+			// border-radius: 3px;
+		}
+	
+	&Box>* {
+		position: relative;
+		z-index: 2;
 	}
 
 	&Heading {
@@ -82,9 +109,18 @@
 	&Form {
 		display: flex;
 		flex-direction: column;
-		gap: 10px;
-		width: 750px;
 	}
+
+	
+
+	&ByManufacturer {
+		.checkBoxContainer {
+			.checkBox {
+				font-size: 20px;
+			}
+		}	
+	}	
+		
 
 	&ByManufacturer,
 	&ByType,
@@ -93,6 +129,14 @@
 		flex-direction: column;
 		gap: 10px;
 	}
+}
+
+.Suitcase {
+	align-self: center;
+}
+
+.Suitcase .checkBox{
+	font-size: 24px;
 }
 
 .verticalDivider {
@@ -154,15 +198,17 @@
 	height: auto;
 }
 
+
 .checkBox {
+	will-change: transform;
+
 	border-radius: 5px;
-	padding: 0px 20px;
+	padding: 5px 10px;
+	margin: 3px;
 	border: none;
-	background: $colorMain;
-	border: solid 1px #dedede;
-	box-shadow: $boxShadow;
+	border: solid 3px transparent;
 	font-family: var(--font-family-regular);
-	font-size: 15px;
+	font-size: 16px;
 	color: $textColorSecondary;
 	font-weight: 600;
 	cursor: pointer;
@@ -170,19 +216,36 @@
 	display: flex;
 	flex-direction: row;
 	gap: 15px;
-	align-items: center;
+
+	backdrop-filter: blur(2px);
+
+	div {
+		text-align: left;
+	}
+
+	// background-color: hsla(0, 0%, 100%) !important;
+	background-color:rgba(255, 255, 255, 0.8);
 
 	&:hover {
-		background-color: hsl(0deg 0% 79.9% / 31%);
+		// background-color: hsl(0deg 0% 79.9% / 31%);
+		box-shadow: 
+		2px 1px 1px 1px hsla(0, 0%, 60%, 0.05),
+		4px 2px 2px 4px hsla(0, 0%, 50%, 0.05)
+		;
+		transform: scale(1.04);
 	}
 
 	&:active {
-		background-color: hsl(0deg 0% 55.71% / 31%);
+		// background-color: hsl(0deg 0% 55.71% / 31%);
 	}
 
 	&Chosen {
-		background-color: hsl(0deg 0% 79.9% / 31%) !important;
+			background: $colorMain;
+			background-color: hsla(0, 0%, 100%, 1) !important;
+			border: solid 2px hsla(0, 0%, 40%, 1);
+		// background-color: hsl(0deg 0% 79.9% / 31%) !important;
 	}
+
 }
 
 .coinHeading {
@@ -208,13 +271,14 @@
 	}
 
 	.filter {
-		&Box {
-			padding: 0 10px;
+		&Background {
 			flex-direction: column;
+			align-items: center;
 		}
 
-		&Form {
-			align-items: center;
+		&Box {
+			max-width: 650px;
+			height: 600px;
 		}
 
 		&ByManufacturer,
@@ -235,6 +299,10 @@
 		padding: 0 20px;
 	}
 
+	.filterBox {
+		max-width: 400px;
+	}
+
 	.filterText {
 		width: 100%;
 		padding: 20px;
@@ -245,6 +313,10 @@
 @media (max-width: 400px) {
 	.checkBoxContainer {
 		justify-content: flex-start;
+	}
+
+	.filterBox {
+		max-width: 300px;
 	}
 
 	.heading {

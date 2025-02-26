@@ -9,10 +9,14 @@ import { FaArrowRightLong, FaCartShopping } from 'react-icons/fa6';
 
 const CataloguePage = () => {
 	const [filteredData, setFilteredData] = useState<TProduct[]>([]);
-	const [sex, setSex] = useState<ESexTypes[]>([]);
-	const [categories, setCategories] = useState<EProductCategory[]>([]);
+	const [activeSex, setActiveSex] = useState<ESexTypes | null>(null);
+	const [selectedCategories, setSelectedCategories] = useState<EProductCategory[]>([]);
 	const [data, setData] = useState<TProduct[]>([])
 
+	const maleValue = Object.values(ESexTypes)[0]; 
+	const femaleValue = Object.values(ESexTypes)[1];
+
+	
 	useEffect(() => {
 		let data: TProduct[] = [];
 
@@ -37,33 +41,47 @@ const CataloguePage = () => {
 
 	useEffect(() => {
 		setFilteredData(
-			(data as TProduct[])
-				.filter((product) => {
-					return (
-						(!sex.length || sex.includes(product?.sex)) &&
-						(!categories.length ||
-							categories.includes(product?.category))
-					);
-				})
+			(data as TProduct[]).filter((product) => {
+
+				if (selectedCategories.length === 0) {
+					return true;
+				}
+
+				if (activeSex === null) {
+					return selectedCategories.includes(product.category);
+				}
+				
+				return selectedCategories.includes(product.category) && (product.sex === activeSex);
+			})
 		);
-	}, [categories, sex, data]);
+	}, [activeSex, selectedCategories, data]);
 
-	const toggleSex = (value: ESexTypes) => {
-		if (sex.includes(value)) {
-			setSex((prev) => prev.filter((item) => item !== value));
+	const toggleCategory = (sex: ESexTypes, category: EProductCategory) => {
+		if (sex === null) {
+			setActiveSex(sex);
+			setSelectedCategories(prev => {
+				if (prev.includes(category)) {
+					return prev.filter(item => item !== category)
+				} else {
+					return [category]
+				}
+			})
 			return;
 		}
 
-		setSex((prev) => [...prev, value]);
-	};
-
-	const toggleCategories = (value: EProductCategory) => {
-		if (categories.includes(value)) {
-			setCategories((prev) => prev.filter((item) => item !== value));
+		if (activeSex !== sex) {
+			setActiveSex(sex);
+			setSelectedCategories([category]);
 			return;
 		}
-
-		setCategories((prev) => [...prev, value]);
+		
+		setSelectedCategories(prev => {
+			if (prev.includes(category)) {
+				return prev.filter(item => item !== category);
+			} else {
+				return [...prev, category];
+			}
+		});
 	};
 
 	return (
@@ -79,89 +97,68 @@ const CataloguePage = () => {
 			</Helmet>
 			<div className={styles.innerBox}>
 				<PageDivider className={styles.filterBackground}>
-					<div className={styles.filterBox}>
-						<div className={styles.filterText}>
-							<p className={styles.description}>
-								Фильтр продукции
-							</p>
-							<div className={styles.divider} />
-							<h2 className={styles.heading}>
-								Выберите товар по параметрам
-							</h2>
-						</div>
+
+					<div className={styles.filterBox}
+						style={{
+							backgroundImage: `url(${products[10].images[2]})`,
+							backgroundSize: 'cover',
+							backgroundPosition: 'center',
+						}}>
 						<div className={styles.filterForm}>
-							<div className={styles.filterByManufacturer}>
+							<div className={styles.filterByType}>
 								<h3 className={styles.filterHeading}>
-									Пол
+									Мужское
 								</h3>
-								<div className={styles.checkBoxContainer}>
-									{Object.values(ESexTypes).map(
-										(sexItem, index) => {
-											const numberOfProducts =
-												data.filter(
-													(product) =>
-														product?.sex ===
-														sexItem
-												).length;
-											return (
+									<div className={styles.checkBoxContainer}>
+										{Object.values(EProductCategory).slice(0, -1).map(
+											(category, index) => {
+												return (
 													<button
-														key={
-															sexItem + index
-														}
-														className={`${styles.checkBox} ${sex.includes(sexItem) ? styles.checkBoxChosen : ''}`}
-														onClick={() =>
-															toggleSex(
-																sexItem as ESexTypes
-															)
-														}
+														key={category + index}
+														className={`
+														${styles.checkBox} 
+														${activeSex === maleValue && selectedCategories.includes(category) ? styles.checkBoxChosen : ''}
+														`}
+														onClick={() => toggleCategory(maleValue, category as EProductCategory)}
 													>
 														<div
 															className={
 																styles.buttonText
 															}
 														>
-															{sexItem}
-														</div>
-														<div
-															className={
-																styles.verticalDivider
-															}
-														/>
-														<div
-															className={
-																styles.amountOfProducts
-															}
-														>
-															{numberOfProducts}
+															{category}
 														</div>
 													</button>
 												)
-										}
-									)}
-								</div>
+											}
+										)}
+									</div>
 							</div>
+						</div>
+					</div>
+
+					<div className={styles.filterBox}
+						style={{
+							backgroundImage: `url(${products[54].images[1]})`,
+							backgroundSize: 'cover',
+							backgroundPosition: 'center',
+						}}>
+						<div className={styles.filterForm}>
 							<div className={styles.filterByType}>
 								<h3 className={styles.filterHeading}>
-									Тип товара
+									Женское
 								</h3>
 								<div className={styles.checkBoxContainer}>
-									{Object.values(EProductCategory).map(
+									{Object.values(EProductCategory).slice(0, -1).map(
 										(category, index) => {
-											const numberOfProducts =
-												filteredData.filter(
-													(product) =>
-														product?.category ===
-														category
-												).length;
 											return (
 												<button
 													key={category + index}
-													className={`${styles.checkBox} ${categories.includes(category) ? styles.checkBoxChosen : ''}`}
-													onClick={() =>
-														toggleCategories(
-															category as EProductCategory
-														)
-													}
+														className={`
+														${styles.checkBox} 
+														${activeSex === femaleValue && selectedCategories.includes(category) ? styles.checkBoxChosen : ''}
+														`}
+														onClick={() => toggleCategory(femaleValue, category as EProductCategory)}
 												>
 													<div
 														className={
@@ -170,22 +167,44 @@ const CataloguePage = () => {
 													>
 														{category}
 													</div>
-													<div
-														className={
-															styles.verticalDivider
-														}
-													/>
-													<div
-														className={
-															styles.amountOfProducts
-														}
-													>
-														{numberOfProducts}
-													</div>
 												</button>
 											)
 										}
 									)}
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div className={styles.filterBox}
+						style={{
+							backgroundImage: `url(${products[22].images[0]})`,
+							backgroundSize: 'cover',
+							backgroundPosition: 'center',
+						}}>
+						<div className={`${styles.filterForm } ${styles.Suitcase}`}>
+							<div className={styles.filterByType}>
+								<div className={styles.checkBoxContainer}>
+									{(() => {
+										const suitcase = Object.values(EProductCategory)[7]
+										
+										return (
+											<button
+												className={`${styles.checkBox} ${selectedCategories.includes(suitcase) ? styles.checkBoxChosen : '' }`}
+												onClick={() =>
+													toggleCategory(null, suitcase as EProductCategory)
+												}
+											>
+												<div
+													className={
+														styles.buttonText
+													}
+												>
+													{suitcase}
+												</div>
+											</button>
+										)
+									})()}
 								</div>
 							</div>
 						</div>
