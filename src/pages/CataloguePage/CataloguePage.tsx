@@ -9,7 +9,7 @@ import { FaArrowRightLong, FaCartShopping } from 'react-icons/fa6';
 
 const CataloguePage = () => {
 	const [filteredData, setFilteredData] = useState<TProduct[]>([]);
-	const [activeSex, setActiveSex] = useState<ESexTypes | null>(null);
+	const [activeSex, setActiveSex] = useState<ESexTypes | []>([]);
 	const [selectedCategories, setSelectedCategories] = useState<EProductCategory[]>([]);
 	const [data, setData] = useState<TProduct[]>([])
 
