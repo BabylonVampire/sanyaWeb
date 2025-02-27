@@ -21,7 +21,8 @@ export interface BindedProduct {
 
 export enum ESexTypes {
 	MALE = 'Мужское',
-	FEMALE = 'Женское'
+	FEMALE = 'Женское',
+	BOTH = 'Унисекс'
 }
 
 export enum EProductCategory {

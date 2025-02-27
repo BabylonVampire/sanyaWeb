@@ -7,6 +7,12 @@ import { EProductCategory, ESexTypes, TProduct } from '../../lib';
 import { Helmet } from 'react-helmet';
 import { FaArrowRightLong, FaCartShopping } from 'react-icons/fa6';
 
+
+import suitcaseImage from "../../assets/images/suitcase.jpg"
+import manImage from "../../assets/images/man.jpg"
+import womanImage from "../../assets/images/woman.jpg"
+
+
 const CataloguePage = () => {
 	const [filteredData, setFilteredData] = useState<TProduct[]>([]);
 	const [activeSex, setActiveSex] = useState<ESexTypes | []>([]);
@@ -15,7 +21,7 @@ const CataloguePage = () => {
 
 	const maleValue = Object.values(ESexTypes)[0]; 
 	const femaleValue = Object.values(ESexTypes)[1];
-
+	const unisexValue = Object.values(ESexTypes)[2];
 	
 	useEffect(() => {
 		let data: TProduct[] = [];
@@ -42,13 +48,8 @@ const CataloguePage = () => {
 	useEffect(() => {
 		setFilteredData(
 			(data as TProduct[]).filter((product) => {
-
 				if (selectedCategories.length === 0) {
 					return true;
-				}
-
-				if (activeSex === null) {
-					return selectedCategories.includes(product.category);
 				}
 				
 				return selectedCategories.includes(product.category) && (product.sex === activeSex);
@@ -57,18 +58,6 @@ const CataloguePage = () => {
 	}, [activeSex, selectedCategories, data]);
 
 	const toggleCategory = (sex: ESexTypes, category: EProductCategory) => {
-		if (sex === null) {
-			setActiveSex(sex);
-			setSelectedCategories(prev => {
-				if (prev.includes(category)) {
-					return prev.filter(item => item !== category)
-				} else {
-					return [category]
-				}
-			})
-			return;
-		}
-
 		if (activeSex !== sex) {
 			setActiveSex(sex);
 			setSelectedCategories([category]);
@@ -100,14 +89,14 @@ const CataloguePage = () => {
 
 					<div className={styles.filterBox}
 						style={{
-							backgroundImage: `url(${products[10].images[2]})`,
+							backgroundImage: `url(${manImage})`,
 							backgroundSize: 'cover',
 							backgroundPosition: 'center',
 						}}>
 						<div className={styles.filterForm}>
 							<div className={styles.filterByType}>
 								<h3 className={styles.filterHeading}>
-									Мужское
+									Мужчинам
 								</h3>
 									<div className={styles.checkBoxContainer}>
 										{Object.values(EProductCategory).slice(0, -1).map(
@@ -139,14 +128,14 @@ const CataloguePage = () => {
 
 					<div className={styles.filterBox}
 						style={{
-							backgroundImage: `url(${products[54].images[1]})`,
+							backgroundImage: `url(${womanImage})`,
 							backgroundSize: 'cover',
 							backgroundPosition: 'center',
 						}}>
 						<div className={styles.filterForm}>
 							<div className={styles.filterByType}>
 								<h3 className={styles.filterHeading}>
-									Женское
+									Женщинам
 								</h3>
 								<div className={styles.checkBoxContainer}>
 									{Object.values(EProductCategory).slice(0, -1).map(
@@ -178,12 +167,15 @@ const CataloguePage = () => {
 
 					<div className={styles.filterBox}
 						style={{
-							backgroundImage: `url(${products[22].images[0]})`,
+							backgroundImage: `url(${suitcaseImage})`,
 							backgroundSize: 'cover',
 							backgroundPosition: 'center',
 						}}>
-						<div className={`${styles.filterForm } ${styles.Suitcase}`}>
+						<div className={styles.filterForm}>
 							<div className={styles.filterByType}>
+								<h3 className={styles.filterHeading}>
+									Чемоданы
+								</h3>
 								<div className={styles.checkBoxContainer}>
 									{(() => {
 										const suitcase = Object.values(EProductCategory)[7]
@@ -192,7 +184,7 @@ const CataloguePage = () => {
 											<button
 												className={`${styles.checkBox} ${selectedCategories.includes(suitcase) ? styles.checkBoxChosen : '' }`}
 												onClick={() =>
-													toggleCategory(null, suitcase as EProductCategory)
+													toggleCategory(unisexValue, suitcase as EProductCategory)
 												}
 											>
 												<div
