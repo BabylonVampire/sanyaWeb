@@ -21,16 +21,17 @@ export interface BindedProduct {
 
 export enum ESexTypes {
 	MALE = 'Мужское',
-	FEMALE = 'Женское'
+	FEMALE = 'Женское',
+	CHEMODAN = 'Чемодан',
 }
 
 export enum EProductCategory {
-	SHOULDER_BAGS = "Сумки на плечо",
-	WALLETS = "Кошельки",
-	ACCESSORIES = "Ключница, обложка на паспорт, автодокументы",
-	CARD_HOLDERS = "Картхолдеры",
-	BACKPACKS = "Рюкзаки",
-	BUSINESS_BRIEFCASES = "Деловые портфели",
-	BUSINESS_CARD_HOLDERS = "Визитница",
+	SHOULDER_BAGS = 'Сумки на плечо',
+	WALLETS = 'Кошельки',
+	ACCESSORIES = 'Ключница, обложка на паспорт, автодокументы',
+	CARD_HOLDERS = 'Картхолдеры',
+	BACKPACKS = 'Рюкзаки',
+	BUSINESS_BRIEFCASES = 'Деловые портфели',
+	BUSINESS_CARD_HOLDERS = 'Визитница',
 	BAG = 'Чемодан',
 }

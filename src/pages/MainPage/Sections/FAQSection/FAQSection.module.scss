@@ -56,8 +56,6 @@
 	align-items: flex-start;
 	gap: 20px;
 	position: relative;
-	background-color: $colorLightBlueBack;
-	box-shadow: $boxShadow;
 
 	@media screen and (max-width: 1200px) {
 		height: auto;
@@ -80,6 +78,7 @@
 	background-image: url(../../../../assets/images/shipping.webp);
 	background-size: cover;
 	background-position: center;
+	border-radius: 7px;
 }
 
 .divider {

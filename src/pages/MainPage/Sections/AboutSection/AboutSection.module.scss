@@ -15,6 +15,7 @@
 	background-image: url(../../../../assets/images/about.webp);
 	background-size: cover;
 	background-position: center;
+	border-radius: 7px;
 }
 
 .container {
@@ -57,8 +58,6 @@
 	flex-direction: column;
 	gap: 20px;
 	padding: 40px;
-	background-color: $colorLightBlueBack;
-	box-shadow: $boxShadow;
 }
 
 .heading {

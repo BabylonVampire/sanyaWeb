@@ -7,6 +7,7 @@ export const YT_LINK = 'https://www.youtube.com/c/MININGCENTER';
 export const WA_LINK = '';
 
 export const links = [
+	{ title: 'Главная', link: '/' },
 	{ title: 'О нас', link: '/o-nas/' },
 	{ title: 'Каталог', link: '/asic/' },
 	{ title: 'Вопросы и ответы', link: '/faq/' },

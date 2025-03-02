@@ -36,8 +36,6 @@
 	flex-direction: column;
 	flex: 1;
 	gap: 15px;
-	background-color: $colorLightBlueBack;
-	box-shadow: $boxShadow;
 }
 
 .heading {
@@ -63,6 +61,7 @@
 .iframeVideo {
 	width: 100%;
 	aspect-ratio: 7 / 4;
+	border-radius: 7px;
 }
 
 .bottomBox {
@@ -76,7 +75,7 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 40px;
+	gap: 20px;
 
 	@media screen and (max-width: 600px) {
 		gap: 20px;
@@ -97,6 +96,7 @@
 .iframeVideoItem {
 	pointer-events: none;
 	aspect-ratio: 7 / 4;
+	border-radius: 7px;
 }
 
 @media screen and (max-width: 1200px) {

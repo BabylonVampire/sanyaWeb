@@ -28,18 +28,22 @@ const MainPage = () => {
 				img="http://gafurov-prod-test.online/assets/about.webp"
 				position="row"
 			/>
+			<div className={styles.divider} />
 			<AboutSection
-				style={{ margin: '50px 0' }}
 				label="Изделие по вашим фотографиям и эскизам"
 				description="Если хотите разработать свое изделие, то мы сможем вам помочь. Это может быть сумка, сложный кардхолдер или портмоне, рюкзаки или ремень из экзотической кожи. В стоимость входит полный цикл разработки и работы команды из менеджера, ведущего заказ, проектировщика и мастера (согласование деталей, проектирование, иногда прототипирование, поиск и закупка материалов, работа и другие расходы)"
 				img="http://gafurov-prod-test.online/assets/individual.webp"
 				position="row-reverse"
 			/>
+			<div className={styles.divider} />
+
 			<VideoSection />
+			<div className={styles.divider} />
 			<ProductsSection
 				title="Популярные товары"
 				productsList={products as TProduct[]}
 			/>
+			<div className={styles.divider} />
 			<FAQSection />
 		</main>
 	);
