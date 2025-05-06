@@ -1,18 +1,25 @@
 import React from 'react';
 import styles from './AboutPage.module.scss';
 import { Helmet } from 'react-helmet';
+import { SchemaMarkup } from '../../lib/uikit/components/SchemaMarkup/SchemaMarkup';
 
 const AboutPage = () => {
 	return (
 		<div className={styles.aboutPage}>
 			<Helmet>
 				<title>О нас</title>
-				<meta name="description" content="" />
+				<meta
+					name="description"
+					content="BRISTAN WERO – история бренда, философия качества и ручного производства кожаных аксессуаров."
+				/>
+				<SchemaMarkup pageType="WebPage" />
 			</Helmet>
 			<div className={styles.innerBox}>
 				<div className={styles.textBox}>
 					<h2 className={styles.heading}>О нас</h2>
-					<div className={styles.contentBox}>
+					<div
+						className={`${styles.contentBox} wow animate__animated animate__fadeIn`}
+					>
 						<div className={styles.logo} />
 						<div className={styles.textContainer}>
 							<p className={styles.description}>

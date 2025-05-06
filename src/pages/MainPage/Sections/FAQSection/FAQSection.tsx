@@ -16,7 +16,9 @@ const FAQSection = () => {
 	}));
 
 	return (
-		<section className={styles.FAQInnerBox}>
+		<section
+			className={`${styles.FAQInnerBox} wow animate__animated animate__fadeInUp`}
+		>
 			<div className={styles.collapseBox}>
 				<div className={styles.contentBox}>
 					<MCHeading>Вопросы и ответы</MCHeading>

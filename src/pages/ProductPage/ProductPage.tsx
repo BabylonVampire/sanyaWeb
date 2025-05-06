@@ -3,7 +3,7 @@ import { ModalWindow, TProduct } from '../../lib';
 import MCParseArticle from '../../lib/uikit/components/MCParseArticle/MCParseArticle';
 import styles from './ProductPage.module.scss';
 import { Image } from 'antd';
-
+import { Helmet } from 'react-helmet';
 import { useRef } from 'react';
 
 interface TProps {
@@ -65,6 +65,13 @@ const ProductPage: FC<TProps> = ({ product }) => {
 
 	return (
 		<div className={styles.ProductPage}>
+			<Helmet>
+				<title>{product.title}</title>
+				<meta
+					name="description"
+					content={`${product.title}. Натуральная кожа, ручная работа. Купить в интернет-магазине BRISTAN WERO.`}
+				/>
+			</Helmet>
 			<ModalWindow
 				type="product"
 				show={showModal}

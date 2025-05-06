@@ -26,7 +26,7 @@ const MCCard: FC<ICardProps> = ({ style, product, className }) => {
 	// ];
 
 	return (
-		<a className={styles.card} href={`/asic/${product.id}`}>
+		<a className={styles.card} href={`/catalogue/${product.id}`}>
 			<div
 				className={`${styles.cardInnerBox} ${className}`}
 				style={style}

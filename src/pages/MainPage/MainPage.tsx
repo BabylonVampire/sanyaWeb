@@ -8,6 +8,7 @@ import FAQSection from './Sections/FAQSection/FAQSection';
 import { Helmet } from 'react-helmet';
 import products from '../../db/products.json';
 import { TProduct } from '../../lib';
+import { SchemaMarkup } from '../../lib/uikit/components/SchemaMarkup/SchemaMarkup';
 
 const MainPage = () => {
 	return (
@@ -16,8 +17,9 @@ const MainPage = () => {
 				<title>Bristan Wero. Italian leather</title>
 				<meta
 					name="description"
-					// content="Оборудование для майнинга. Предлагаем нашим клиентам купить оборудование для майнинга биткоина и других криптовалют по выгодным ценам. Доставка из Китая в Москву, Санкт-Петербург и другие города России. Страхование грузов."
+					content="BRISTAN WERO – производитель премиальных аксессуаров из натуральной кожи. Кошельки, ремни, сумки ручной работы. Собственное производство в России."
 				/>
+				<SchemaMarkup pageType="Organization" />
 			</Helmet>
 			<HeroSection />
 			<AboutSection

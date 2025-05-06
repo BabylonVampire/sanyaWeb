@@ -30,8 +30,8 @@ export const App = () => {
 						<Route element={<MainPageAsync />} path="/" key={'/'} />
 						<Route
 							element={<CataloguePageAsync />}
-							path="/asic/"
-							key={'/asic/'}
+							path="/catalogue/"
+							key={'/catalogue/'}
 						/>
 						<Route
 							element={<AboutPageAsync />}
@@ -87,8 +87,8 @@ export const App = () => {
 									element={
 										<ProductPageAsync product={product} />
 									}
-									path={`/asic/${product.id}/`}
-									key={`/asic/${product.id}/`}
+									path={`/catalogue/${product.id}/`}
+									key={`/catalogue/${product.id}/`}
 								/>
 							)
 						)}

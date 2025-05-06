@@ -13,7 +13,9 @@ const VideoSection = () => {
 
 	const [currentVideo, setCurrentVideo] = useState<string>(videos[0]);
 	return (
-		<section className={styles.videoSection}>
+		<section
+			className={`${styles.videoSection} wow animate__animated animate__fadeInUp`}
+		>
 			<div className={styles.topBox}>
 				<div className={styles.contentBox}>
 					<h2 className={styles.heading}>Наши новые видео</h2>

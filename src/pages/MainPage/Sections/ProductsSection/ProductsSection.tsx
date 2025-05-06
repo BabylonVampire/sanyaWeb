@@ -10,7 +10,9 @@ type TProps = {
 
 const ProductsSection: FC<TProps> = ({ productsList }) => {
 	return (
-		<section className={styles.productsSection}>
+		<section
+			className={`${styles.productsSection} wow animate__animated animate__fadeIn`}
+		>
 			<h2 className={styles.heading}>Популярные товары</h2>
 			<div className={styles.innerBox}>
 				<div className={styles.productsContainerWrapper}>

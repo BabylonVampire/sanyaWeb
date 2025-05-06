@@ -6,6 +6,7 @@ import React from 'react';
 import { MCHeading } from '../../lib/uikit/components/MCHeading/MCHeading';
 import PageDivider from '../../lib/uikit/components/PageDivider/PageDivider';
 import { Helmet } from 'react-helmet';
+import { SchemaMarkup } from '../../lib/uikit/components/SchemaMarkup/SchemaMarkup';
 
 const FAQ = () => {
 	const faqData: TFaq[] = text.items;
@@ -21,9 +22,15 @@ const FAQ = () => {
 		<div className={styles.FAQInnerBox}>
 			<Helmet>
 				<title>FAQ</title>
-				<meta name="description" content="" />
+				<meta
+					name="description"
+					content="Ответы на популярные вопросы о кожаных аксессуарах BRISTAN WERO: уход, доставка, гарантия."
+				/>
+				<SchemaMarkup pageType="WebPage" />
 			</Helmet>
-			<PageDivider className={styles.headBox}>
+			<PageDivider
+				className={`${styles.headBox} wow animate__animated animate__fadeIn`}
+			>
 				<div className={styles.headInner}>
 					<MCHeading>Вопросы и ответы</MCHeading>
 					<p className={styles.subText}>Остались вопросы?</p>
@@ -33,7 +40,9 @@ const FAQ = () => {
 				</div>
 			</PageDivider>
 
-			<div className={styles.collapseBox}>
+			<div
+				className={`${styles.collapseBox} wow animate__animated animate__fadeInUp`}
+			>
 				<div className={styles.faqImage} />
 				<Collapse
 					className={styles.FaqAccordion}

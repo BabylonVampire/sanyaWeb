@@ -17,7 +17,10 @@ const AboutSection: FC<TProps> = ({
 	style,
 }) => {
 	return (
-		<section className={styles.aboutSection} style={style}>
+		<section
+			className={`${styles.aboutSection} wow animate__animated animate__fadeIn`}
+			style={style}
+		>
 			<div
 				className={styles.container}
 				style={{ flexDirection: position }}
